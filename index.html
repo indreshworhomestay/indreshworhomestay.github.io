@@ -54,9 +54,9 @@ section h2 { text-align:center; margin-bottom:40px; font-size:2.5rem; color:#333
 .testimonials-wrapper .next { right:0; }
 
 /* Gallery Carousel */
-.gallery-wrapper { position:relative; max-width:800px; margin:0 auto; overflow:hidden; }
+.gallery-wrapper { position:relative; max-width:900px; margin:0 auto; overflow:hidden; }
 .gallery-carousel { display:flex; transition: transform 0.5s ease; }
-.gallery-carousel img { flex:0 0 100%; border-radius:10px; margin:5px 0; height:auto; object-fit:contain; cursor:pointer; }
+.gallery-carousel img { flex:0 0 100%; width:100%; max-height:300px; object-fit:contain; border-radius:10px; cursor:pointer; margin:0; }
 .gallery-wrapper .prev, .gallery-wrapper .next { background:#28a745; color:#fff; border:none; border-radius:5px; padding:10px; cursor:pointer; position:absolute; top:50%; transform:translateY(-50%); font-size:20px; z-index:2; }
 .gallery-wrapper .prev { left:0; }
 .gallery-wrapper .next { right:0; }
@@ -88,6 +88,7 @@ button { padding:10px; border:none; border-radius:5px; background:#28a745; color
         <li><a href="#rooms">Rooms</a></li>
         <li><a href="#experiences">Experiences</a></li>
         <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#gallery">Gallery</a></li>
         <li><a href="#" id="contactBtn">Contact</a></li>
     </ul>
 </nav>
@@ -207,25 +208,35 @@ window.addEventListener('click',e=>{ if(e.target==contactModal){ contactModal.st
 
 // Testimonials Carousel
 let testimonialIndex=0;
+const testimonialCarousel=document.querySelector('.testimonials-carousel');
+const testimonialCards=document.querySelectorAll('.testimonial-card');
+function updateTestimonial() {
+    testimonialCarousel.style.transform=`translateX(-${testimonialIndex*100}%)`;
+}
 function slideTestimonials(direction){
-    const carousel=document.querySelector('.testimonials-carousel');
-    const cardWidth=carousel.querySelector('.testimonial-card').offsetWidth+20;
     testimonialIndex+=direction;
     if(testimonialIndex<0) testimonialIndex=0;
-    if(testimonialIndex>carousel.children.length-1) testimonialIndex=carousel.children.length-1;
-    carousel.style.transform=`translateX(-${testimonialIndex*cardWidth}px)`;
+    if(testimonialIndex>testimonialCards.length-1) testimonialIndex=testimonialCards.length-1;
+    updateTestimonial();
 }
+// Auto-slide testimonials
+setInterval(()=>{ testimonialIndex++; if(testimonialIndex>=testimonialCards.length) testimonialIndex=0; updateTestimonial(); },4000);
 
 // Gallery Carousel
 let galleryIndex=0;
+const galleryCarousel=document.querySelector('.gallery-carousel');
+const galleryImages=document.querySelectorAll('.gallery-carousel img');
+function updateGallery() {
+    galleryCarousel.style.transform=`translateX(-${galleryIndex*100}%)`;
+}
 function slideGallery(direction){
-    const carousel=document.querySelector('.gallery-carousel');
-    const imgWidth=carousel.querySelector('img').offsetWidth;
     galleryIndex+=direction;
     if(galleryIndex<0) galleryIndex=0;
-    if(galleryIndex>carousel.children.length-1) galleryIndex=carousel.children.length-1;
-    carousel.style.transform=`translateX(-${galleryIndex*imgWidth}px)`;
+    if(galleryIndex>galleryImages.length-1) galleryIndex=galleryImages.length-1;
+    updateGallery();
 }
+// Auto-slide gallery
+setInterval(()=>{ galleryIndex++; if(galleryIndex>=galleryImages.length) galleryIndex=0; updateGallery(); },5000);
 
 // Lightbox
 function openLightbox(img){
