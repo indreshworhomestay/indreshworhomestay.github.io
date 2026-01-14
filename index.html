@@ -6,7 +6,7 @@
 <title>Indreshwor Homestay</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
-* { margin:0; padding:0; box-sizing:border-box; font-family: 'Roboto', sans-serif; }
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Roboto', sans-serif; }
 body { line-height:1.6; background-color:#fdf6f0; color:#333; }
 a { text-decoration:none; color:#333; }
 nav { display:flex; justify-content:space-between; align-items:center; padding:20px 50px; background:#fff; position:sticky; top:0; box-shadow:0 2px 5px rgba(0,0,0,0.1); z-index:100; }
@@ -14,7 +14,7 @@ nav ul { display:flex; list-style:none; gap:20px; }
 nav ul li { font-weight:500; }
 nav .logo a { font-weight:bold; font-size:1.5rem; color:#28a745; }
 
-/* Hero section with background image and overlay */
+/* Hero Section */
 header {
     height:90vh;
     background:url('images/indreshwor-temple-1.jpg') center/cover no-repeat;
@@ -38,59 +38,46 @@ header h1 { font-size:3rem; margin-bottom:10px; text-shadow:2px 2px 5px rgba(0,0
 header p { font-size:1.2rem; text-shadow:1px 1px 3px rgba(0,0,0,0.7); }
 header a.button { padding:12px 25px; background:#28a745; color:#fff; font-weight:bold; border-radius:5px; margin-top:20px; display:inline-block; }
 
+/* Sections */
 section { padding:80px 50px; }
 section h2 { text-align:center; margin-bottom:40px; font-size:2.5rem; color:#333; }
-.about, .rooms, .experiences, .testimonials { max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
+.about, .rooms, .experiences, .testimonials, .gallery { max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
 .card { flex:1 1 300px; background:#f9f9f9; padding:20px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1); text-align:center; }
 .card img { width:100%; border-radius:10px; margin-bottom:15px; }
 
-/* Gallery Section */
-.gallery { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:15px; max-width:1200px; margin:0 auto; }
-.gallery img { width:100%; border-radius:10px; transition:0.3s; }
-.gallery img:hover { transform:scale(1.05); }
+/* Testimonials Carousel */
+.testimonials-wrapper { display:flex; align-items:center; max-width:1200px; margin:0 auto; position:relative; }
+.testimonials-carousel { display:flex; overflow:hidden; width:100%; }
+.testimonial-card { flex:0 0 50%; background:#f9f9f9; padding:20px; margin:10px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1); transition:0.3s; }
+.testimonials-wrapper .prev, .testimonials-wrapper .next { background:#28a745; color:#fff; border:none; border-radius:5px; padding:10px; cursor:pointer; position:absolute; top:50%; transform:translateY(-50%); font-size:20px; }
+.testimonials-wrapper .prev { left:-50px; }
+.testimonials-wrapper .next { right:-50px; }
 
-.faq { background:#f9f9f9; padding:20px; border-radius:10px; margin:10px 0; }
-footer { background:#333; color:#fff; text-align:center; padding:20px; }
-button { padding:10px; border:none; border-radius:5px; background:#28a745; color:#fff; font-weight:bold; cursor:pointer; }
+/* Gallery Carousel */
+.gallery-wrapper { display:flex; align-items:center; max-width:800px; margin:0 auto; position:relative; }
+.gallery-carousel { display:flex; overflow:hidden; width:100%; }
+.gallery-carousel img { flex:0 0 100%; border-radius:10px; cursor:pointer; transition:0.3s; }
+.gallery-wrapper .prev, .gallery-wrapper .next { background:#28a745; color:#fff; border:none; border-radius:5px; padding:10px; cursor:pointer; position:absolute; top:50%; transform:translateY(-50%); font-size:20px; }
+.gallery-wrapper .prev { left:-40px; }
+.gallery-wrapper .next { right:-40px; }
 
-/* Contact modal */
+/* Lightbox */
+#lightbox { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.9); z-index:500; justify-content:center; align-items:center; }
+#lightbox.show { display:flex; }
+#lightbox img { max-width:90%; max-height:90%; border-radius:10px; }
+#closeLightbox { position:absolute; top:20px; right:30px; font-size:30px; color:#fff; cursor:pointer; }
+
+/* Contact Modal */
 #contactModal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:200; justify-content:center; align-items:center; }
 #contactModalContent { background:#fff; padding:30px; border-radius:10px; max-width:500px; width:90%; position:relative; }
 #closeModal { position:absolute; top:10px; right:15px; cursor:pointer; font-weight:bold; font-size:18px; }
 .contact form { display:flex; flex-direction:column; gap:15px; width:100%; }
 .contact form input, .contact form textarea { padding:10px; border-radius:5px; border:1px solid #ccc; width:100%; }
 
-@media(max-width:768px){
-    nav { flex-direction:column; gap:10px; }
-}
-</style>
-    #lightbox {
-    display: none;
-    position: fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background: rgba(0,0,0,0.9);
-    z-index:500;
-    justify-content:center;
-    align-items:center;
-    display:flex;
-}
-#lightbox img {
-    max-width:90%;
-    max-height:90%;
-    border-radius:10px;
-}
-#closeLightbox {
-    position:absolute;
-    top:20px;
-    right:30px;
-    font-size:30px;
-    color:#fff;
-    cursor:pointer;
-}
+button { padding:10px; border:none; border-radius:5px; background:#28a745; color:#fff; font-weight:bold; cursor:pointer; }
 
+@media(max-width:768px){ nav { flex-direction:column; gap:10px; } .testimonial-card { flex:0 0 100%; } }
+</style>
 </head>
 <body>
 
@@ -106,7 +93,7 @@ button { padding:10px; border:none; border-radius:5px; background:#28a745; color
     </ul>
 </nav>
 
-<!-- Hero Section -->
+<!-- Hero -->
 <header>
     <h1>Welcome to Indreshwor Homestay</h1>
     <p>Authentic Stay in Panauti, Nepal</p>
@@ -115,171 +102,142 @@ button { padding:10px; border:none; border-radius:5px; background:#28a745; color
 
 <!-- About -->
 <section id="about">
-    <h2>About Us</h2>
-    <div class="about">
-        <div class="card">
-            <p>Welcome to our family-run homestay nestled in the heart of Panauti. With four cozy rooms and a commitment to hospitality, we invite you to experience the warmth of our home as your own. Immerse yourself in the rich culture of Panauti with complimentary sightseeing tours, and savor the flavors of local cuisine with complimentary cooking classes. Let us be your gateway to authentic experiences and cherished memories in this enchanting corner of Nepal. Our homestay prides itself on being a serene sanctuary away from the hustle and bustle of city life. \Whether you’re seeking a peaceful getaway or eager to explore the hidden gems of the area, our homestay promises a memorable stay filled with warmth and hospitality.</p>
-        </div>
-    </div>
+<h2>About Us</h2>
+<div class="about">
+<div class="card">
+<p>Welcome to our family-run homestay nestled in the heart of Panauti. With four cozy rooms and a commitment to hospitality, we invite you to experience the warmth of our home as your own. Immerse yourself in the rich culture of Panauti with complimentary sightseeing tours, and savor the flavors of local cuisine with complimentary cooking classes. Let us be your gateway to authentic experiences and cherished memories in this enchanting corner of Nepal. Our homestay prides itself on being a serene sanctuary away from the hustle and bustle of city life. Whether you're seeking a peaceful getaway or eager to explore the hidden gems of the area, our homestay promises a memorable stay filled with warmth and hospitality.</p>
+</div>
+</div>
 </section>
 
 <!-- Rooms -->
 <section id="rooms">
-    <h2>Our Rooms</h2>
-    <div class="rooms">
-        <div class="card">
-            <img src="images/room 1.jpg" alt="Room 1">
-            <h3>Room 1</h3>
-            <p>Cozy room with 2 double beds. Perfect for families or groups.</p>
-        </div>
-        <div class="card">
-            <img src="images/room 3.jpg" alt="Room 2">
-            <h3>Room 2</h3>
-            <p>Cozy room with 2 double beds. Perfect for families or groups.</p>
-        </div>
-        <div class="card">
-            <img src="images/room2.jpg" alt="Room 3">
-            <h3>Room 3</h3>
-            <p>Spacious room with 1 single bed and 2 double beds. Ideal for larger families.</p>
-        </div>
-    </div>
+<h2>Our Rooms</h2>
+<div class="rooms">
+<div class="card"><img src="images/room 1.jpg" alt="Room 1"><h3>Room 1</h3><p>2 double beds</p></div>
+<div class="card"><img src="images/room 3.jpg" alt="Room 2"><h3>Room 2</h3><p>2 double beds</p></div>
+<div class="card"><img src="images/room2.jpg" alt="Room 3"><h3>Room 3</h3><p>1 single + 2 double beds</p></div>
+</div>
 </section>
 
 <!-- Experiences -->
 <section id="experiences">
-    <h2>Experiences</h2>
-    <div class="experiences">
-        <div class="card">
-            <h3>Cooking Classes</h3>
-            <p>Learn to prepare authentic Nepali dishes in our hands-on cooking classes with the family.</p>
-        </div>
-        <div class="card">
-            <h3>Sightseeing Tours</h3>
-            <p>Explore Panauti’s temples, heritage sites, and hidden gems with complimentary guided tours.</p>
-        </div>
-    </div>
-</section>
-
-<section id="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery-wrapper">
-        <button class="prev" onclick="slideGallery(-1)">&#10094;</button>
-        <div class="gallery-carousel">
-            <img src="images/guest3.jpg" alt="Gallery 1" onclick="openLightbox(this)">
-            <img src="images/guest5.jpg" alt="Gallery 2" onclick="openLightbox(this)">
-            <img src="images/guest4.jpg" alt="Gallery 3" onclick="openLightbox(this)">
-            <img src="images/elizabeth mexico .jpg" alt="Gallery 4" onclick="openLightbox(this)">
-            <img src="images/2023-07-15.jpg" alt="Gallery 5" onclick="openLightbox(this)">
-            <img src="images/2023-05-23.jpg" alt="Gallery 6" onclick="openLightbox(this)">
-            <img src="images/20230725_134644.jpg" alt="Gallery 7" onclick="openLightbox(this)">
-            <img src="images/20230617_133520.jpg" alt="Gallery 8" onclick="openLightbox(this)">
-            <img src="images/guest1.jpg" alt="Gallery 9" onclick="openLightbox(this)">
-            <img src="images/guest2.jpg" alt="Gallery 10" onclick="openLightbox(this)">
-            <img src="images/unnamed.jpg" alt="Gallery 11" onclick="openLightbox(this)">
-            <img src="images/neighborhood.jpg" alt="Gallery 12" onclick="openLightbox(this)">
-            
-        </div>
-        <button class="next" onclick="slideGallery(1)">&#10095;</button>
-    </div>
-</section>
-
-<!-- Lightbox Overlay (same as before) -->
-<div id="lightbox">
-    <span id="closeLightbox">&times;</span>
-    <img id="lightboxImg" src="">
-</div>
-
-
-<!-- Lightbox Overlay -->
-<div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:500; justify-content:center; align-items:center;">
-    <span id="closeLightbox" style="position:absolute; top:20px; right:30px; font-size:30px; color:#fff; cursor:pointer;">&times;</span>
-    <img id="lightboxImg" src="" style="max-width:90%; max-height:90%; border-radius:10px;">
+<h2>Experiences</h2>
+<div class="experiences">
+<div class="card"><h3>Cooking Classes</h3><p>Learn to prepare authentic Nepali dishes in our hands-on cooking classes with the family.</p></div>
+<div class="card"><h3>Sightseeing Tours</h3><p>Explore Panauti’s temples, heritage sites, and hidden gems with complimentary guided tours.</p></div>
 </div>
 </section>
 
-<!-- Testimonials -->
+<!-- Testimonials Carousel -->
 <section id="testimonials">
-    <h2>Testimonials</h2>
-    <div class="testimonials-wrapper">
-        <button class="prev" onclick="slideTestimonials(-1)">&#10094;</button>
-        <div class="testimonials-carousel">
-            <div class="testimonial-card"><p>“I’m Nataly from Colombia….”</p><strong>- Nataly</strong></div>
-            <div class="testimonial-card"><p>“Panauti is an amazing historical town! …”</p><strong>- Audrianna</strong></div>
-            <div class="testimonial-card"><p>“Thank you for the lovely hospitality….”</p><strong>- Rubina & Yukta</strong></div>
-            <div class="testimonial-card"><p>“Thank you for lovely time. I like Panauti….”</p><strong>- Chie</strong></div>
-            <div class="testimonial-card"><p>“Thank you very much, Amigos….”</p><strong>- Inigo</strong></div>
-            <div class="testimonial-card"><p>“Thank you so much for let me be at your home….”</p><strong>- Ely</strong></div>
-            <div class="testimonial-card"><p>“Thanks a lot for this incredible stay….”</p><strong>- Fanny</strong></div>
-            <div class="testimonial-card"><p>“Thank you so much for this moment….”</p><strong>- Maxence</strong></div>
-        </div>
-        <button class="next" onclick="slideTestimonials(1)">&#10095;</button>
-    </div>
+<h2>Testimonials</h2>
+<div class="testimonials-wrapper">
+<button class="prev" onclick="slideTestimonials(-1)">&#10094;</button>
+<div class="testimonials-carousel">
+<div class="testimonial-card"><p>“I’m Nataly from Colombia…”</p><strong>- Nataly</strong></div>
+<div class="testimonial-card"><p>“Panauti is an amazing historical town! …”</p><strong>- Audrianna</strong></div>
+<div class="testimonial-card"><p>“Thank you for the lovely hospitality…”</p><strong>- Rubina & Yukta</strong></div>
+<div class="testimonial-card"><p>“Thank you for lovely time. I like Panauti…”</p><strong>- Chie</strong></div>
+<div class="testimonial-card"><p>“Thank you very much, Amigos…”</p><strong>- Inigo</strong></div>
+<div class="testimonial-card"><p>“Thank you so much for let me be at your home…”</p><strong>- Ely</strong></div>
+<div class="testimonial-card"><p>“Thanks a lot for this incredible stay…”</p><strong>- Fanny</strong></div>
+<div class="testimonial-card"><p>“Thank you so much for this moment…”</p><strong>- Maxence</strong></div>
+</div>
+<button class="next" onclick="slideTestimonials(1)">&#10095;</button>
+</div>
 </section>
 
+<!-- Gallery Carousel -->
+<section id="gallery">
+<h2>Gallery</h2>
+<div class="gallery-wrapper">
+<button class="prev" onclick="slideGallery(-1)">&#10094;</button>
+<div class="gallery-carousel">
+<img src="images/gallery1.jpg" alt="Gallery 1" onclick="openLightbox(this)">
+<img src="images/gallery2.jpg" alt="Gallery 2" onclick="openLightbox(this)">
+<img src="images/gallery3.jpg" alt="Gallery 3" onclick="openLightbox(this)">
+<img src="images/gallery4.jpg" alt="Gallery 4" onclick="openLightbox(this)">
+<img src="images/gallery5.jpg" alt="Gallery 5" onclick="openLightbox(this)">
+<img src="images/gallery6.jpg" alt="Gallery 6" onclick="openLightbox(this)">
+<img src="images/gallery7.jpg" alt="Gallery 7" onclick="openLightbox(this)">
+<img src="images/gallery8.jpg" alt="Gallery 8" onclick="openLightbox(this)">
+<img src="images/gallery9.jpg" alt="Gallery 9" onclick="openLightbox(this)">
+<img src="images/gallery10.jpg" alt="Gallery 10" onclick="openLightbox(this)">
+<img src="images/gallery11.jpg" alt="Gallery 11" onclick="openLightbox(this)">
+</div>
+<button class="next" onclick="slideGallery(1)">&#10095;</button>
+</div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox">
+<span id="closeLightbox">&times;</span>
+<img id="lightboxImg" src="">
+</div>
 
 <!-- Contact Modal -->
 <div id="contactModal">
-    <div id="contactModalContent">
-        <span id="closeModal">&times;</span>
-        <h2>Contact Us</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-        <p style="text-align:center; margin-top:15px;">Email: indreshworhomestay@gmail.com</p>
-        <p style="text-align:center;">Address: Panauti -07, Near Sorakhutte Pati / Ward 07 office</p>
-        <p style="text-align:center;">Mobile: +977 9841356421</p>
-    </div>
+<div id="contactModalContent">
+<span id="closeModal">&times;</span>
+<h2>Contact Us</h2>
+<form>
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea placeholder="Message" rows="5" required></textarea>
+<button type="submit">Send Message</button>
+</form>
+<p style="text-align:center; margin-top:15px;">Email: indreshworhomestay@gmail.com</p>
+<p style="text-align:center;">Address: Panauti -07, Near Sorakhutte Pati / Ward 07 office</p>
+<p style="text-align:center;">Mobile: +977 9841356421</p>
+</div>
 </div>
 
 <footer>
-    &copy; 2026 Indreshwor Homestay. All rights reserved.
+&copy; 2026 Indreshwor Homestay. All rights reserved.
 </footer>
 
 <script>
+// Contact modal
 const contactBtn = document.getElementById('contactBtn');
 const contactModal = document.getElementById('contactModal');
 const closeModal = document.getElementById('closeModal');
+contactBtn.addEventListener('click', e=>{ e.preventDefault(); contactModal.style.display='flex'; });
+closeModal.addEventListener('click', ()=>{ contactModal.style.display='none'; });
+window.addEventListener('click', e=>{ if(e.target==contactModal){ contactModal.style.display='none'; } });
 
-contactBtn.addEventListener('click', function(e){
-    e.preventDefault();
-    contactModal.style.display = 'flex';
-});
-
-closeModal.addEventListener('click', function(){
-    contactModal.style.display = 'none';
-});
-
-window.addEventListener('click', function(e){
-    if(e.target == contactModal){
-        contactModal.style.display = 'none';
-    }
-});
-</script>
-    <script>
-// Open lightbox
-function openLightbox(img) {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    lightboxImg.src = img.src;
-    lightbox.style.display = 'flex';
+// Testimonials Carousel
+let testimonialIndex=0;
+function slideTestimonials(direction){
+const carousel=document.querySelector('.testimonials-carousel');
+const cardWidth=carousel.querySelector('.testimonial-card').offsetWidth+20;
+testimonialIndex+=direction;
+if(testimonialIndex<0)testimonialIndex=0;
+if(testimonialIndex>carousel.children.length-2)testimonialIndex=carousel.children.length-2;
+carousel.style.transform=`translateX(-${testimonialIndex*cardWidth}px)`;
 }
 
-// Close lightbox
-document.getElementById('closeLightbox').addEventListener('click', function(){
-    document.getElementById('lightbox').style.display = 'none';
-});
+// Gallery Carousel
+let galleryIndex=0;
+function slideGallery(direction){
+const carousel=document.querySelector('.gallery-carousel');
+const imgWidth=carousel.querySelector('img').offsetWidth;
+galleryIndex+=direction;
+if(galleryIndex<0)galleryIndex=0;
+if(galleryIndex>carousel.children.length-1)galleryIndex=carousel.children.length-1;
+carousel.style.transform=`translateX(-${galleryIndex*imgWidth}px)`;
+}
 
-// Click outside image to close
-document.getElementById('lightbox').addEventListener('click', function(e){
-    if(e.target === this){
-        this.style.display = 'none';
-    }
-});
+// Lightbox
+function openLightbox(img){
+const lightbox=document.getElementById('lightbox');
+const lightboxImg=document.getElementById('lightboxImg');
+lightboxImg.src=img.src;
+lightbox.classList.add('show');
+}
+document.getElementById('closeLightbox').addEventListener('click',()=>{document.getElementById('lightbox').classList.remove('show');});
+document.getElementById('lightbox').addEventListener('click',e=>{ if(e.target===document.getElementById('lightbox')){ e.target.classList.remove('show'); }});
 </script>
-
 
 </body>
 </html>
