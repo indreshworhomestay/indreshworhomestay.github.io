@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Experiences | Indreshwor Homestay, Panauti</title>
+
+<meta name="description" content="Enjoy authentic experiences at Indreshwor Homestay including Nepali cooking classes and guided sightseeing tours in historic Panauti.">
+<meta name="keywords" content="Panauti homestay, Nepali cooking class, sightseeing Panauti, Indreshwor Homestay experience">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#f2f5f7;color:#333;line-height:1.8}
+
+/* NAVBAR */
+nav{
+display:flex;justify-content:space-between;align-items:center;
+padding:18px 60px;background:#fff;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+position:sticky;top:0;z-index:100
+}
+nav .logo{font-size:1.6rem;font-weight:600;color:#2c9c5f}
+nav ul{display:flex;gap:25px;list-style:none}
+nav a{text-decoration:none;color:#333;font-weight:500}
+
+/* SECTIONS */
+section{padding:90px 60px;max-width:1200px;margin:auto}
+h1{text-align:center;font-size:2.8rem;margin-bottom:60px}
+h2{font-size:2rem;margin-bottom:20px;color:#2c9c5f}
+.experience-box{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+margin-bottom:100px;
+align-items:center
+}
+
+/* SLIDER */
+.slider{
+position:relative;
+width:100%;
+height:380px;
+overflow:hidden;
+border-radius:22px;
+box-shadow:0 15px 35px rgba(0,0,0,.12)
+}
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+opacity:0;
+transition:opacity .6s ease
+}
+.slide img{
+width:100%;
+height:100%;
+object-fit:contain;
+background:#000
+}
+.slide.active{opacity:1}
+
+/* FUTURISTIC BUTTONS */
+.controls{
+position:absolute;
+top:50%;
+width:100%;
+display:flex;
+justify-content:space-between;
+transform:translateY(-50%);
+padding:0 20px
+}
+.btn{
+width:45px;height:45px;
+border-radius:50%;
+border:none;
+background:rgba(0,0,0,.6);
+color:#fff;
+font-size:20px;
+cursor:pointer;
+backdrop-filter:blur(6px)
+}
+.btn:hover{background:#2c9c5f}
+
+/* TEXT CARD */
+.text-card{
+background:#fff;
+padding:40px;
+border-radius:22px;
+box-shadow:0 12px 30px rgba(0,0,0,.08)
+}
+
+/* FOOTER */
+footer{text-align:center;padding:35px;background:#111;color:#fff}
+
+@media(max-width:900px){
+.experience-box{grid-template-columns:1fr}
+.slider{height:300px}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">Indreshwor Homestay</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="rooms.html">Rooms</a></li>
+    <li><a href="experiences.html">Experiences</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section>
+<h1>Authentic Experiences</h1>
+
+<!-- COOKING -->
+<div class="experience-box">
+  <div class="slider" id="cookingSlider">
+    <div class="slide active"><img src="images/cooking1.jpg"></div>
+    <div class="slide"><img src="images/cooking2.jpg"></div>
+    <div class="slide"><img src="images/cooking3.jpg"></div>
+    <div class="controls">
+      <button class="btn" onclick="prevSlide('cookingSlider')">&#10094;</button>
+      <button class="btn" onclick="nextSlide('cookingSlider')">&#10095;</button>
+    </div>
+  </div>
+
+  <div class="text-card">
+    <h2>Cooking Experience</h2>
+    <p>
+At our homestay, we believe in offering more than just accommodation – we strive to provide enriching experiences that immerse our guests in the local culture.
+<br><br>
+We offer complimentary cooking classes where guests learn to prepare authentic Nepali dishes. Guests actively participate in every step, from selecting fresh ingredients to mastering traditional cooking techniques.
+<br><br>
+Through this hands-on experience, guests gain a deeper appreciation for Nepali culture while forming meaningful connections that go beyond hospitality.
+    </p>
+  </div>
+</div>
+
+<!-- SIGHTSEEING -->
+<div class="experience-box">
+  <div class="text-card">
+    <h2>Sightseeing Tours</h2>
+    <p>
+Explore the rich heritage and spiritual sanctuaries of Panauti with our complimentary sightseeing tours.
+<br><br>
+Visit Namobuddha, Sorakhutte Pati, the ancient Indreshwor Temple, Triveni Ghat, and Gorakhnath Temple while discovering hidden cultural gems.
+<br><br>
+Each step is a journey into the heart of Nepalese history, spirituality, and everyday local life.
+    </p>
+  </div>
+
+  <div class="slider" id="sightseeingSlider">
+    <div class="slide active"><img src="images/sight1.jpg"></div>
+    <div class="slide"><img src="images/sight2.jpg"></div>
+    <div class="slide"><img src="images/sight3.jpg"></div>
+    <div class="controls">
+      <button class="btn" onclick="prevSlide('sightseeingSlider')">&#10094;</button>
+      <button class="btn" onclick="nextSlide('sightseeingSlider')">&#10095;</button>
+    </div>
+  </div>
+</div>
+
+</section>
+
+<footer>
+© 2026 Indreshwor Homestay | Authentic Experiences in Panauti
+</footer>
+
+<script>
+function nextSlide(id){
+let slides=document.querySelectorAll(`#${id} .slide`);
+let i=[...slides].findIndex(s=>s.classList.contains('active'));
+slides[i].classList.remove('active');
+slides[(i+1)%slides.length].classList.add('active');
+}
+
+function prevSlide(id){
+let slides=document.querySelectorAll(`#${id} .slide`);
+let i=[...slides].findIndex(s=>s.classList.contains('active'));
+slides[i].classList.remove('active');
+slides[(i-1+slides.length)%slides.length].classList.add('active');
+}
+</script>
+
+</body>
+</html>
