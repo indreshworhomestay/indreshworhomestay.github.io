@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Contact | Indreshwor Homestay, Panauti</title>
+
+<meta name="description" content="Contact Indreshwor Homestay in Panauti, Nepal. Book your stay via email, WhatsApp, or visit us directly.">
+<meta name="keywords" content="Indreshwor Homestay contact, Panauti homestay email, Nepal homestay booking">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#f2f5f7;color:#333;line-height:1.7}
+
+/* NAVBAR */
+nav{
+display:flex;justify-content:space-between;align-items:center;
+padding:18px 60px;background:#fff;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+position:sticky;top:0;z-index:100
+}
+nav .logo{font-size:1.6rem;font-weight:600;color:#2c9c5f}
+nav ul{display:flex;gap:25px;list-style:none}
+nav a{text-decoration:none;color:#333;font-weight:500}
+
+/* PAGE */
+section{padding:90px 60px;max-width:1000px;margin:auto;text-align:center}
+h1{text-align:center;font-size:2.8rem;margin-bottom:50px}
+
+/* CONTACT FORM */
+.contact-container{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:start;
+}
+form{
+background:#fff;padding:35px;border-radius:22px;
+box-shadow:0 12px 30px rgba(0,0,0,.08);
+display:flex;flex-direction:column;
+gap:20px
+}
+input,textarea{
+padding:15px;
+border:1px solid #ccc;
+border-radius:12px;
+font-size:1rem;
+width:100%;
+}
+button{
+padding:15px;
+border:none;
+border-radius:12px;
+background:#2c9c5f;
+color:#fff;
+font-size:1.1rem;
+cursor:pointer;
+transition:.3s
+}
+button:hover{background:#218048}
+
+/* MAP */
+.map-container{
+width:100%;
+height:400px;
+border-radius:22px;
+overflow:hidden;
+box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp-btn{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:#fff;
+padding:15px 20px;
+border-radius:50px;
+font-size:18px;
+text-decoration:none;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+transition:.3s
+}
+.whatsapp-btn:hover{background:#1ebe5b}
+
+/* FOOTER */
+footer{text-align:center;padding:35px;background:#111;color:#fff;margin-top:50px}
+
+@media(max-width:900px){
+.contact-container{grid-template-columns:1fr;gap:40px}
+section{padding:60px 25px}
+.map-container{height:280px}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">Indreshwor Homestay</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="rooms.html">Rooms</a></li>
+    <li><a href="experiences.html">Experiences</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section>
+<h1>Contact Us</h1>
+
+<div class="contact-container">
+
+  <!-- CONTACT FORM -->
+  <form action="mailto:indreshworhomestay@gmail.com" method="post" enctype="text/plain">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <!-- GOOGLE MAP -->
+  <div class="map-container">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.2257152219163!2d85.52390341503605!3d27.61233868280333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1c42f3c8f4a7%3A0xc8c0edc3a1ebd92f!2sPanauti%20-07%2C%20Nepal!5e0!3m2!1sen!2snp!4v1689700000000!5m2!1sen!2snp" 
+      width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+</div>
+
+<!-- WHATSAPP BUTTON -->
+<a href="https://wa.me/9779841356421?text=Hello%20Indreshwor%20Homestay%2C%20I%20would%20like%20to%20book%20a%20room." class="whatsapp-btn" target="_blank">
+📱 WhatsApp Booking
+</a>
+
+</section>
+
+<footer>
+© 2026 Indreshwor Homestay | Panauti, Nepal
+</footer>
+
+</body>
+</html>
