@@ -128,17 +128,17 @@ button { padding:10px; border:none; border-radius:5px; background:#28a745; color
     <h2>Our Rooms</h2>
     <div class="rooms">
         <div class="card">
-            <img src="images/room1.jpg" alt="Room 1">
+            <img src="images/room 1.jpg" alt="Room 1">
             <h3>Room 1</h3>
             <p>Cozy room with 2 double beds. Perfect for families or groups.</p>
         </div>
         <div class="card">
-            <img src="images/room2.jpg" alt="Room 2">
+            <img src="images/room 3.jpg" alt="Room 2">
             <h3>Room 2</h3>
             <p>Cozy room with 2 double beds. Perfect for families or groups.</p>
         </div>
         <div class="card">
-            <img src="images/room3.jpg" alt="Room 3">
+            <img src="images/room2.jpg" alt="Room 3">
             <h3>Room 3</h3>
             <p>Spacious room with 1 single bed and 2 double beds. Ideal for larger families.</p>
         </div>
@@ -162,15 +162,33 @@ button { padding:10px; border:none; border-radius:5px; background:#28a745; color
 
 <section id="gallery">
     <h2>Gallery</h2>
-    <div class="gallery">
-        <img src="images/gallery1.jpg" alt="Gallery 1" onclick="openLightbox(this)">
-        <img src="images/gallery2.jpg" alt="Gallery 2" onclick="openLightbox(this)">
-        <img src="images/gallery3.jpg" alt="Gallery 3" onclick="openLightbox(this)">
-        <img src="images/gallery4.jpg" alt="Gallery 4" onclick="openLightbox(this)">
-        <img src="images/gallery5.jpg" alt="Gallery 5" onclick="openLightbox(this)">
-        <img src="images/gallery6.jpg" alt="Gallery 6" onclick="openLightbox(this)">
+    <div class="gallery-wrapper">
+        <button class="prev" onclick="slideGallery(-1)">&#10094;</button>
+        <div class="gallery-carousel">
+            <img src="images/guest3.jpg" alt="Gallery 1" onclick="openLightbox(this)">
+            <img src="images/guest5.jpg" alt="Gallery 2" onclick="openLightbox(this)">
+            <img src="images/guest4.jpg" alt="Gallery 3" onclick="openLightbox(this)">
+            <img src="images/elizabeth mexico .jpg" alt="Gallery 4" onclick="openLightbox(this)">
+            <img src="images/2023-07-15.jpg" alt="Gallery 5" onclick="openLightbox(this)">
+            <img src="images/2023-05-23.jpg" alt="Gallery 6" onclick="openLightbox(this)">
+            <img src="images/20230725_134644.jpg" alt="Gallery 7" onclick="openLightbox(this)">
+            <img src="images/20230617_133520.jpg" alt="Gallery 8" onclick="openLightbox(this)">
+            <img src="images/guest1.jpg" alt="Gallery 9" onclick="openLightbox(this)">
+            <img src="images/guest2.jpg" alt="Gallery 10" onclick="openLightbox(this)">
+            <img src="images/unnamed.jpg" alt="Gallery 11" onclick="openLightbox(this)">
+            <img src="images/neighborhood.jpg" alt="Gallery 12" onclick="openLightbox(this)">
+            
+        </div>
+        <button class="next" onclick="slideGallery(1)">&#10095;</button>
     </div>
 </section>
+
+<!-- Lightbox Overlay (same as before) -->
+<div id="lightbox">
+    <span id="closeLightbox">&times;</span>
+    <img id="lightboxImg" src="">
+</div>
+
 
 <!-- Lightbox Overlay -->
 <div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:500; justify-content:center; align-items:center;">
@@ -182,17 +200,22 @@ button { padding:10px; border:none; border-radius:5px; background:#28a745; color
 <!-- Testimonials -->
 <section id="testimonials">
     <h2>Testimonials</h2>
-    <div class="testimonials">
-        <div class="card"><p>“I’m Nataly from Colombia. I stayed two beautiful nights in this Homestay and had some amazing days in Panauti. The family took me in as one of the members and always gave me a warm welcome.”</p><strong>- Nataly</strong></div>
-        <div class="card"><p>“Panauti is an amazing historical town! Everyone should pay a visit here! Great hospitality and you won’t be regretted!”</p><strong>- Audrianna</strong></div>
-        <div class="card"><p>“Thank you for the lovely hospitality and the delicious food. We really enjoyed our stay here and look forward to coming back.”</p><strong>- Rubina & Yukta</strong></div>
-        <div class="card"><p>“Thank you for lovely time. I like Panauti. I like people here. I sleep very well. Food is amazing papa. Mama are very kind, warm. I love it here.”</p><strong>- Chie</strong></div>
-        <div class="card"><p>“Thank you very much, Amigos. I felt totally at home. Home food, great talk and trust. A great opportunity to experience Nepal from inside.”</p><strong>- Inigo</strong></div>
-        <div class="card"><p>“Thank you so much for let me be at your home. I had best Newari food, and I feel more motivated to do a volunteer at the school.”</p><strong>- Ely</strong></div>
-        <div class="card"><p>“Thanks a lot for this incredible stay! We had really good time with you and also really good food. Thanks very much for the visit of the school.”</p><strong>- Fanny</strong></div>
-        <div class="card"><p>“Thank you so much for this moment, it was a real pleasure to meet you. All the best for the future. See you next time I hope!”</p><strong>- Maxence</strong></div>
+    <div class="testimonials-wrapper">
+        <button class="prev" onclick="slideTestimonials(-1)">&#10094;</button>
+        <div class="testimonials-carousel">
+            <div class="testimonial-card"><p>“I’m Nataly from Colombia….”</p><strong>- Nataly</strong></div>
+            <div class="testimonial-card"><p>“Panauti is an amazing historical town! …”</p><strong>- Audrianna</strong></div>
+            <div class="testimonial-card"><p>“Thank you for the lovely hospitality….”</p><strong>- Rubina & Yukta</strong></div>
+            <div class="testimonial-card"><p>“Thank you for lovely time. I like Panauti….”</p><strong>- Chie</strong></div>
+            <div class="testimonial-card"><p>“Thank you very much, Amigos….”</p><strong>- Inigo</strong></div>
+            <div class="testimonial-card"><p>“Thank you so much for let me be at your home….”</p><strong>- Ely</strong></div>
+            <div class="testimonial-card"><p>“Thanks a lot for this incredible stay….”</p><strong>- Fanny</strong></div>
+            <div class="testimonial-card"><p>“Thank you so much for this moment….”</p><strong>- Maxence</strong></div>
+        </div>
+        <button class="next" onclick="slideTestimonials(1)">&#10095;</button>
     </div>
 </section>
+
 
 <!-- Contact Modal -->
 <div id="contactModal">
