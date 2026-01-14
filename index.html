@@ -41,22 +41,22 @@ header a.button { padding:12px 25px; background:#28a745; color:#fff; font-weight
 /* Sections */
 section { padding:80px 50px; }
 section h2 { text-align:center; margin-bottom:40px; font-size:2.5rem; color:#333; }
-.about, .rooms, .experiences, .testimonials, .gallery { max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
+.about, .rooms, .experiences { max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
 .card { flex:1 1 300px; background:#f9f9f9; padding:20px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1); text-align:center; }
-.card img { width:100%; border-radius:10px; margin-bottom:15px; }
+.card img { width:100%; height:200px; object-fit:cover; border-radius:10px; margin-bottom:15px; }
 
 /* Testimonials Carousel */
-.testimonials-wrapper { display:flex; align-items:center; max-width:1200px; margin:0 auto; position:relative; }
-.testimonials-carousel { display:flex; overflow:hidden; width:100%; }
-.testimonial-card { flex:0 0 50%; background:#f9f9f9; padding:20px; margin:10px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1); transition:0.3s; }
+.testimonials-wrapper { display:flex; align-items:center; max-width:1200px; margin:0 auto; position:relative; overflow:hidden; }
+.testimonials-carousel { display:flex; transition: transform 0.5s ease; }
+.testimonial-card { flex:0 0 100%; background:#f9f9f9; padding:20px; margin:10px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
 .testimonials-wrapper .prev, .testimonials-wrapper .next { background:#28a745; color:#fff; border:none; border-radius:5px; padding:10px; cursor:pointer; position:absolute; top:50%; transform:translateY(-50%); font-size:20px; }
 .testimonials-wrapper .prev { left:-50px; }
 .testimonials-wrapper .next { right:-50px; }
 
 /* Gallery Carousel */
-.gallery-wrapper { display:flex; align-items:center; max-width:800px; margin:0 auto; position:relative; }
-.gallery-carousel { display:flex; overflow:hidden; width:100%; }
-.gallery-carousel img { flex:0 0 100%; border-radius:10px; cursor:pointer; transition:0.3s; }
+.gallery-wrapper { display:flex; align-items:center; max-width:800px; margin:0 auto; position:relative; overflow:hidden; }
+.gallery-carousel { display:flex; transition: transform 0.5s ease; }
+.gallery-carousel img { flex:0 0 100%; height:300px; object-fit:cover; border-radius:10px; cursor:pointer; margin:5px 0; }
 .gallery-wrapper .prev, .gallery-wrapper .next { background:#28a745; color:#fff; border:none; border-radius:5px; padding:10px; cursor:pointer; position:absolute; top:50%; transform:translateY(-50%); font-size:20px; }
 .gallery-wrapper .prev { left:-40px; }
 .gallery-wrapper .next { right:-40px; }
@@ -73,10 +73,9 @@ section h2 { text-align:center; margin-bottom:40px; font-size:2.5rem; color:#333
 #closeModal { position:absolute; top:10px; right:15px; cursor:pointer; font-weight:bold; font-size:18px; }
 .contact form { display:flex; flex-direction:column; gap:15px; width:100%; }
 .contact form input, .contact form textarea { padding:10px; border-radius:5px; border:1px solid #ccc; width:100%; }
-
 button { padding:10px; border:none; border-radius:5px; background:#28a745; color:#fff; font-weight:bold; cursor:pointer; }
 
-@media(max-width:768px){ nav { flex-direction:column; gap:10px; } .testimonial-card { flex:0 0 100%; } }
+@media(max-width:768px){ nav { flex-direction:column; gap:10px; } }
 </style>
 </head>
 <body>
@@ -105,7 +104,7 @@ button { padding:10px; border:none; border-radius:5px; background:#28a745; color
 <h2>About Us</h2>
 <div class="about">
 <div class="card">
-<p>Welcome to our family-run homestay nestled in the heart of Panauti. With four cozy rooms and a commitment to hospitality, we invite you to experience the warmth of our home as your own. Immerse yourself in the rich culture of Panauti with complimentary sightseeing tours, and savor the flavors of local cuisine with complimentary cooking classes. Let us be your gateway to authentic experiences and cherished memories in this enchanting corner of Nepal. Our homestay prides itself on being a serene sanctuary away from the hustle and bustle of city life. Whether you're seeking a peaceful getaway or eager to explore the hidden gems of the area, our homestay promises a memorable stay filled with warmth and hospitality.</p>
+<p>Welcome to our family-run homestay nestled in the heart of Panauti. With four cozy rooms and a commitment to hospitality, we invite you to experience the warmth of our home as your own. Immerse yourself in the rich culture of Panauti with complimentary sightseeing tours, and savor the flavors of local cuisine with complimentary cooking classes. Our homestay is a serene sanctuary away from the hustle and bustle of city life.</p>
 </div>
 </div>
 </section>
@@ -115,8 +114,8 @@ button { padding:10px; border:none; border-radius:5px; background:#28a745; color
 <h2>Our Rooms</h2>
 <div class="rooms">
 <div class="card"><img src="images/room 1.jpg" alt="Room 1"><h3>Room 1</h3><p>2 double beds</p></div>
-<div class="card"><img src="images/room 3.jpg" alt="Room 2"><h3>Room 2</h3><p>2 double beds</p></div>
-<div class="card"><img src="images/room2.jpg" alt="Room 3"><h3>Room 3</h3><p>1 single + 2 double beds</p></div>
+<div class="card"><img src="images/room 2.jpg" alt="Room 2"><h3>Room 2</h3><p>2 double beds</p></div>
+<div class="card"><img src="images/room 3.jpg" alt="Room 3"><h3>Room 3</h3><p>1 single + 2 double beds</p></div>
 </div>
 </section>
 
@@ -135,14 +134,14 @@ button { padding:10px; border:none; border-radius:5px; background:#28a745; color
 <div class="testimonials-wrapper">
 <button class="prev" onclick="slideTestimonials(-1)">&#10094;</button>
 <div class="testimonials-carousel">
-<div class="testimonial-card"><p>“I’m Nataly from Colombia. I stayed two beautiful nights in this Homestay and had some amazing days in Panauti. The family took me in as one of the members and always gave me a warm welcome. I loved to cook together, learn some Nepali, and get to know more about the culture and history through a lovely family.”</p><strong>- Nataly</strong></div>
-<div class="testimonial-card"><p>“Panauti is an amazing historical town! Everyone should pay a visit here! Great hospitality and you won’t be regretted!”</p><strong>- Audrianna</strong></div>
-<div class="testimonial-card"><p>“Thank you for the lovely hospitality and the delicious food. We really enjoyed our stay here and look forward to coming back.”</p><strong>- Rubina & Yukta</strong></div>
-<div class="testimonial-card"><p>“Thank you for lovely time. I like Panauti. I like people here. I sleep very well. Food is amazing papa. Mama are very kind, warm. I love it here.”</p><strong>- Chie</strong></div>
-<div class="testimonial-card"><p>“Thank you very much, Amigos. I felt totally at home. Home food, great talk and trust. A great opportunity to experience Nepal from inside. I wish I could stay for a month. Good Luck and see you soon.”</p><strong>- Inigo</strong></div>
-<div class="testimonial-card"><p>“Thank you so much for let me be at your home. I had best Newari food, and I feel more motivated to do a volunteer at the school. My first time in Panauti. I guess my friend was right to tell me here will be the best place to stay around.”</p><strong>- Ely</strong></div>
-<div class="testimonial-card"><p>“Thanks a lot for this incredible stay! We had really good time with you and also really good food. Thanks very much for the visit of the school. We can’t wait to see the new one completely finished!”</p><strong>- Fanny</strong></div>
-<div class="testimonial-card"><p>“Thank you so much for this moment, it was a real pleasure to meet you. All the best for the future. See you next time I hope!”</p><strong>- Maxence</strong></div>
+<div class="testimonial-card"><p>“I’m Nataly from Colombia. The family took me in as one of the members and always gave me a warm welcome.”</p><strong>- Nataly</strong></div>
+<div class="testimonial-card"><p>“Panauti is an amazing historical town! Great hospitality and you won’t regret it!”</p><strong>- Audrianna</strong></div>
+<div class="testimonial-card"><p>“Thank you for the lovely hospitality and the delicious food. We really enjoyed our stay here.”</p><strong>- Rubina & Yukta</strong></div>
+<div class="testimonial-card"><p>“Thank you for lovely time. I like Panauti. Food is amazing and people are kind.”</p><strong>- Chie</strong></div>
+<div class="testimonial-card"><p>“I felt totally at home. Home food, great talk and trust. A great opportunity to experience Nepal from inside.”</p><strong>- Inigo</strong></div>
+<div class="testimonial-card"><p>“I had best Newari food and feel more motivated to do a volunteer at the school.”</p><strong>- Ely</strong></div>
+<div class="testimonial-card"><p>“Thanks a lot for this incredible stay! We had really good time with you and also really good food.”</p><strong>- Fanny</strong></div>
+<div class="testimonial-card"><p>“It was a real pleasure to meet you. All the best for the future. See you next time I hope!”</p><strong>- Maxence</strong></div>
 </div>
 <button class="next" onclick="slideTestimonials(1)">&#10095;</button>
 </div>
@@ -199,41 +198,41 @@ button { padding:10px; border:none; border-radius:5px; background:#28a745; color
 
 <script>
 // Contact modal
-const contactBtn = document.getElementById('contactBtn');
-const contactModal = document.getElementById('contactModal');
-const closeModal = document.getElementById('closeModal');
-contactBtn.addEventListener('click', e=>{ e.preventDefault(); contactModal.style.display='flex'; });
-closeModal.addEventListener('click', ()=>{ contactModal.style.display='none'; });
-window.addEventListener('click', e=>{ if(e.target==contactModal){ contactModal.style.display='none'; } });
+const contactBtn=document.getElementById('contactBtn');
+const contactModal=document.getElementById('contactModal');
+const closeModal=document.getElementById('closeModal');
+contactBtn.addEventListener('click',e=>{ e.preventDefault(); contactModal.style.display='flex'; });
+closeModal.addEventListener('click',()=>{ contactModal.style.display='none'; });
+window.addEventListener('click',e=>{ if(e.target==contactModal){ contactModal.style.display='none'; } });
 
 // Testimonials Carousel
 let testimonialIndex=0;
 function slideTestimonials(direction){
-const carousel=document.querySelector('.testimonials-carousel');
-const cardWidth=carousel.querySelector('.testimonial-card').offsetWidth+20;
-testimonialIndex+=direction;
-if(testimonialIndex<0)testimonialIndex=0;
-if(testimonialIndex>carousel.children.length-2)testimonialIndex=carousel.children.length-2;
-carousel.style.transform=`translateX(-${testimonialIndex*cardWidth}px)`;
+    const carousel=document.querySelector('.testimonials-carousel');
+    const cardWidth=carousel.querySelector('.testimonial-card').offsetWidth+20;
+    testimonialIndex+=direction;
+    if(testimonialIndex<0) testimonialIndex=0;
+    if(testimonialIndex>carousel.children.length-1) testimonialIndex=carousel.children.length-1;
+    carousel.style.transform=`translateX(-${testimonialIndex*cardWidth}px)`;
 }
 
 // Gallery Carousel
 let galleryIndex=0;
 function slideGallery(direction){
-const carousel=document.querySelector('.gallery-carousel');
-const imgWidth=carousel.querySelector('img').offsetWidth;
-galleryIndex+=direction;
-if(galleryIndex<0)galleryIndex=0;
-if(galleryIndex>carousel.children.length-1)galleryIndex=carousel.children.length-1;
-carousel.style.transform=`translateX(-${galleryIndex*imgWidth}px)`;
+    const carousel=document.querySelector('.gallery-carousel');
+    const imgWidth=carousel.querySelector('img').offsetWidth+10;
+    galleryIndex+=direction;
+    if(galleryIndex<0) galleryIndex=0;
+    if(galleryIndex>carousel.children.length-1) galleryIndex=carousel.children.length-1;
+    carousel.style.transform=`translateX(-${galleryIndex*imgWidth}px)`;
 }
 
 // Lightbox
 function openLightbox(img){
-const lightbox=document.getElementById('lightbox');
-const lightboxImg=document.getElementById('lightboxImg');
-lightboxImg.src=img.src;
-lightbox.classList.add('show');
+    const lightbox=document.getElementById('lightbox');
+    const lightboxImg=document.getElementById('lightboxImg');
+    lightboxImg.src=img.src;
+    lightbox.classList.add('show');
 }
 document.getElementById('closeLightbox').addEventListener('click',()=>{document.getElementById('lightbox').classList.remove('show');});
 document.getElementById('lightbox').addEventListener('click',e=>{ if(e.target===document.getElementById('lightbox')){ e.target.classList.remove('show'); }});
