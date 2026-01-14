@@ -4,255 +4,205 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Indreshwor Homestay</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Roboto', sans-serif; }
-body { line-height:1.6; background-color:#fdf6f0; color:#333; }
-a { text-decoration:none; color:#333; }
-nav { display:flex; justify-content:space-between; align-items:center; padding:20px 50px; background:#fff; position:sticky; top:0; box-shadow:0 2px 5px rgba(0,0,0,0.1); z-index:100; }
-nav ul { display:flex; list-style:none; gap:20px; }
-nav ul li { font-weight:500; }
-nav .logo a { font-weight:bold; font-size:1.5rem; color:#28a745; }
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Roboto',sans-serif}
+body{background:#f4f6f8;color:#333;scroll-behavior:smooth}
+a{text-decoration:none;color:inherit}
 
-/* Hero Section */
-header {
-    height:90vh;
-    background:url('images/indreshwor-temple-1.jpg') center/cover no-repeat;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    position:relative;
-    color:#fff;
+/* NAV */
+nav{
+display:flex;justify-content:space-between;align-items:center;
+padding:20px 60px;background:#fff;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+position:sticky;top:0;z-index:100
 }
-header::before {
-    content:"";
-    position:absolute;
-    top:0; left:0; width:100%; height:100%;
-    background: rgba(0,0,0,0.4);
-    z-index:1;
+nav ul{display:flex;gap:25px;list-style:none}
+nav .logo{font-size:1.6rem;font-weight:700;color:#2c9c5f}
+
+/* HERO */
+header{
+height:90vh;
+background:url("images/indreshwor-temple-1.jpg") center/cover no-repeat;
+display:flex;align-items:center;justify-content:center;
+position:relative;text-align:center;color:#fff
 }
-header h1, header p, header a.button { position:relative; z-index:2; }
-header h1 { font-size:3rem; margin-bottom:10px; text-shadow:2px 2px 5px rgba(0,0,0,0.7); }
-header p { font-size:1.2rem; text-shadow:1px 1px 3px rgba(0,0,0,0.7); }
-header a.button { padding:12px 25px; background:#28a745; color:#fff; font-weight:bold; border-radius:5px; margin-top:20px; display:inline-block; }
+header::before{
+content:"";position:absolute;inset:0;
+background:rgba(0,0,0,.45)
+}
+header div{position:relative;z-index:1}
+header h1{font-size:3.2rem;margin-bottom:15px}
+header p{font-size:1.3rem}
 
-/* Sections */
-section { padding:80px 50px; }
-section h2 { text-align:center; margin-bottom:40px; font-size:2.5rem; color:#333; }
-.about, .rooms, .experiences { max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
-.card { flex:1 1 300px; background:#f9f9f9; padding:20px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1); text-align:center; }
-.card img { width:100%; height:auto; border-radius:10px; margin-bottom:15px; }
+/* SECTIONS */
+section{padding:90px 60px;max-width:1200px;margin:auto}
+h2{text-align:center;font-size:2.6rem;margin-bottom:50px}
 
-/* Testimonials Carousel */
-.testimonials-wrapper { position:relative; max-width:800px; margin:0 auto; overflow:hidden; }
-.testimonials-carousel { display:flex; transition: transform 0.5s ease; }
-.testimonial-card { flex:0 0 100%; background:#f9f9f9; padding:20px; margin:10px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
-.testimonials-wrapper .prev, .testimonials-wrapper .next { background:#28a745; color:#fff; border:none; border-radius:5px; padding:10px; cursor:pointer; position:absolute; top:50%; transform:translateY(-50%); font-size:20px; z-index:2; }
-.testimonials-wrapper .prev { left:0; }
-.testimonials-wrapper .next { right:0; }
+/* CARDS */
+.card{
+background:#fff;padding:30px;border-radius:16px;
+box-shadow:0 10px 25px rgba(0,0,0,.08)
+}
 
-/* Gallery Carousel */
-.gallery-wrapper { position:relative; max-width:900px; margin:0 auto; overflow:hidden; }
-.gallery-carousel { display:flex; transition: transform 0.5s ease; }
-.gallery-carousel img { flex:0 0 100%; width:100%; max-height:300px; object-fit:contain; border-radius:10px; cursor:pointer; margin:0; }
-.gallery-wrapper .prev, .gallery-wrapper .next { background:#28a745; color:#fff; border:none; border-radius:5px; padding:10px; cursor:pointer; position:absolute; top:50%; transform:translateY(-50%); font-size:20px; z-index:2; }
-.gallery-wrapper .prev { left:0; }
-.gallery-wrapper .next { right:0; }
+/* ROOMS */
+.rooms{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+.rooms img{width:100%;height:230px;object-fit:contain}
 
-/* Lightbox */
-#lightbox { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.9); z-index:500; justify-content:center; align-items:center; }
-#lightbox.show { display:flex; }
-#lightbox img { max-width:90%; max-height:90%; border-radius:10px; }
-#closeLightbox { position:absolute; top:20px; right:30px; font-size:30px; color:#fff; cursor:pointer; }
+/* SLIDERS */
+.slider-wrapper{
+position:relative;overflow:hidden;max-width:900px;margin:auto
+}
+.slider-track{
+display:flex;transition:transform .6s ease
+}
+.slider-track img{
+width:100%;height:260px;
+object-fit:contain;
+border-radius:16px;
+cursor:pointer
+}
 
-/* Contact Modal */
-#contactModal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:200; justify-content:center; align-items:center; }
-#contactModalContent { background:#fff; padding:30px; border-radius:10px; max-width:500px; width:90%; position:relative; }
-#closeModal { position:absolute; top:10px; right:15px; cursor:pointer; font-weight:bold; font-size:18px; }
-.contact form { display:flex; flex-direction:column; gap:15px; width:100%; }
-.contact form input, .contact form textarea { padding:10px; border-radius:5px; border:1px solid #ccc; width:100%; }
-button { padding:10px; border:none; border-radius:5px; background:#28a745; color:#fff; font-weight:bold; cursor:pointer; }
+/* ARROWS */
+.arrow{
+position:absolute;top:50%;transform:translateY(-50%);
+width:50px;height:50px;border-radius:50%;
+background:linear-gradient(135deg,#2c9c5f,#1f7d4a);
+color:#fff;border:none;font-size:22px;
+display:flex;align-items:center;justify-content:center;
+box-shadow:0 8px 20px rgba(0,0,0,.25);
+transition:.3s;cursor:pointer
+}
+.arrow:hover{transform:translateY(-50%) scale(1.1)}
+.prev{left:-25px}
+.next{right:-25px}
 
-@media(max-width:768px){ nav { flex-direction:column; gap:10px; } }
+/* TESTIMONIAL */
+.testimonial{
+min-width:100%;
+text-align:center;
+padding:35px;
+line-height:1.7
+}
+
+/* LIGHTBOX */
+#lightbox{
+display:none;position:fixed;inset:0;
+background:rgba(0,0,0,.95);
+justify-content:center;align-items:center;
+z-index:999
+}
+#lightbox img{max-width:90%;max-height:90%}
+#lightbox span{
+position:absolute;top:25px;right:35px;
+font-size:40px;color:#fff;cursor:pointer
+}
+
+/* FOOTER */
+footer{text-align:center;padding:30px;background:#111;color:#fff}
 </style>
 </head>
+
 <body>
 
-<!-- Navigation -->
 <nav>
-    <div class="logo"><a href="#">Indreshwor Homestay</a></div>
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#rooms">Rooms</a></li>
-        <li><a href="#experiences">Experiences</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#" id="contactBtn">Contact</a></li>
-    </ul>
+<div class="logo">Indreshwor Homestay</div>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#rooms">Rooms</a></li>
+<li><a href="#experiences">Experiences</a></li>
+<li><a href="#testimonials">Testimonials</a></li>
+<li><a href="#gallery">Gallery</a></li>
+</ul>
 </nav>
 
-<!-- Hero -->
 <header>
-    <h1>Welcome to Indreshwor Homestay</h1>
-    <p>Authentic Stay in Panauti, Nepal</p>
-    <a class="button" href="https://wa.me/9779841356421" target="_blank">Book via WhatsApp</a>
+<div>
+<h1>Welcome to Indreshwor Homestay</h1>
+<p>Authentic stay in Panauti, Nepal</p>
+</div>
 </header>
 
-<!-- About -->
 <section id="about">
 <h2>About Us</h2>
-<div class="about">
 <div class="card">
-<p>Welcome to our family-run homestay nestled in the heart of Panauti. With four cozy rooms and a commitment to hospitality, we invite you to experience the warmth of our home as your own. Immerse yourself in the rich culture of Panauti with complimentary sightseeing tours, and savor the flavors of local cuisine with complimentary cooking classes. Our homestay is a serene sanctuary away from the hustle and bustle of city life.</p>
-</div>
+<p>Welcome to our family-run homestay nestled in the heart of Panauti. With four cozy rooms and a commitment to hospitality, we invite you to experience the warmth of our home as your own...</p>
 </div>
 </section>
 
-<!-- Rooms -->
 <section id="rooms">
 <h2>Our Rooms</h2>
 <div class="rooms">
-<div class="card"><img src="images/room 1.jpg" alt="Room 1"><h3>Room 1</h3><p>2 double beds</p></div>
-<div class="card"><img src="images/room 2.jpg" alt="Room 2"><h3>Room 2</h3><p>2 double beds</p></div>
-<div class="card"><img src="images/room 3.jpg" alt="Room 3"><h3>Room 3</h3><p>1 single + 2 double beds</p></div>
+<div class="card"><img src="images/room 1.jpg"><h3>Room 1</h3><p>2 Double Beds</p></div>
+<div class="card"><img src="images/room 2.jpg"><h3>Room 2</h3><p>2 Double Beds</p></div>
+<div class="card"><img src="images/room 3.jpg"><h3>Room 3</h3><p>1 Single + 2 Double Beds</p></div>
 </div>
 </section>
 
-<!-- Experiences -->
-<section id="experiences">
-<h2>Experiences</h2>
-<div class="experiences">
-<div class="card"><h3>Cooking Classes</h3><p>At our homestay, we believe in offering more than just accommodation – we strive to provide enriching experiences that immerse our guests in the local culture. As part of this commitment, we offer complimentary cooking classes where guests can learn to prepare authentic Nepali dishes. What sets our cooking classes apart is our hands-on approach, where guests actively participate in the cooking process alongside the family. By involving our guests in every step of meal preparation, from selecting fresh ingredients to mastering traditional cooking techniques, we provide a unique opportunity to not only taste but also understand the essence of Nepali cuisine. Through this interactive experience, guests gain a deeper appreciation for Nepali culture, fostering connections that go beyond mere hospitality. Join us in the kitchen and embark on a culinary journey that tantalizes the taste buds while celebrating the rich culinary heritage of Nepal..</p></div>
-<div class="card"><h3>Sightseeing Tours</h3><p>Explore the rich heritage and spiritual sanctuaries of Panauti with our complimentary sightseeing tours. Begin your journey at the house of Namobuddha then at Sorakhutte Pati, a charming square brimming with local culture offering a glimpse into the daily rhythms of Panauti life.
-
-Continue your pilgrimage at the ancient Indreshwor Temple, a masterpiece of Newari architecture dedicated to Lord Shiva, where echoes of devotion resonate through its intricately carved pillars and pagoda-style roofs.
-
-Triveni Ghat, where the converging rivers hold sacred significance in Hindu mythology, offering a serene spot for reflection and reverence.
-
-Complete your excursion at ancient Gorakhnath Temple while visiting other cultural places. These are just a glimpse of the many enchanting destinations awaiting your exploration in Panauti. Join us as we unveil the hidden gems and sacred wonders of this historic town, where every step is a journey into the heart of Nepalese culture and spirituality.</p></div>
-</div>
-</section>
-
-<!-- Testimonials Carousel -->
 <section id="testimonials">
 <h2>Testimonials</h2>
-<div class="testimonials-wrapper">
-<button class="prev" onclick="slideTestimonials(-1)">&#10094;</button>
-<div class="testimonials-carousel">
-<div class="testimonial-card"><p>“I’m Nataly from Colombia. The family took me in as one of the members and always gave me a warm welcome.”</p><strong>- Nataly</strong></div>
-<div class="testimonial-card"><p>“Panauti is an amazing historical town! Great hospitality and you won’t regret it!”</p><strong>- Audrianna</strong></div>
-<div class="testimonial-card"><p>“Thank you for the lovely hospitality and the delicious food. We really enjoyed our stay here.”</p><strong>- Rubina & Yukta</strong></div>
-<div class="testimonial-card"><p>“Thank you for lovely time. I like Panauti. Food is amazing and people are kind.”</p><strong>- Chie</strong></div>
-<div class="testimonial-card"><p>“I felt totally at home. Home food, great talk and trust. A great opportunity to experience Nepal from inside.”</p><strong>- Inigo</strong></div>
-<div class="testimonial-card"><p>“I had best Newari food and feel more motivated to do a volunteer at the school.”</p><strong>- Ely</strong></div>
-<div class="testimonial-card"><p>“Thanks a lot for this incredible stay! We had really good time with you and also really good food.”</p><strong>- Fanny</strong></div>
-<div class="testimonial-card"><p>“It was a real pleasure to meet you. All the best for the future. See you next time I hope!”</p><strong>- Maxence</strong></div>
+<div class="slider-wrapper">
+<button class="arrow prev" onclick="slide('testimonial',-1)">❮</button>
+<div class="slider-track" id="testimonial">
+<div class="testimonial">“I felt totally at home. Amazing food and warm family.”<br><b>- Inigo</b></div>
+<div class="testimonial">“Best place to stay in Panauti. Great hospitality.”<br><b>- Audrianna</b></div>
+<div class="testimonial">“Delicious Newari food and wonderful people.”<br><b>- Ely</b></div>
 </div>
-<button class="next" onclick="slideTestimonials(1)">&#10095;</button>
+<button class="arrow next" onclick="slide('testimonial',1)">❯</button>
 </div>
 </section>
 
-<!-- Gallery Carousel -->
 <section id="gallery">
 <h2>Gallery</h2>
-<div class="gallery-wrapper">
-<button class="prev" onclick="slideGallery(-1)">&#10094;</button>
-<div class="gallery-carousel">
-<img src="images/gallery1.jpg" alt="Gallery 1" onclick="openLightbox(this)">
-<img src="images/gallery2.jpg" alt="Gallery 2" onclick="openLightbox(this)">
-<img src="images/gallery3.jpg" alt="Gallery 3" onclick="openLightbox(this)">
-<img src="images/gallery4.jpg" alt="Gallery 4" onclick="openLightbox(this)">
-<img src="images/gallery5.jpg" alt="Gallery 5" onclick="openLightbox(this)">
-<img src="images/gallery6.jpg" alt="Gallery 6" onclick="openLightbox(this)">
-<img src="images/gallery7.jpg" alt="Gallery 7" onclick="openLightbox(this)">
-<img src="images/gallery8.jpg" alt="Gallery 8" onclick="openLightbox(this)">
-<img src="images/gallery9.jpg" alt="Gallery 9" onclick="openLightbox(this)">
-<img src="images/gallery10.jpg" alt="Gallery 10" onclick="openLightbox(this)">
-<img src="images/gallery11.jpg" alt="Gallery 11" onclick="openLightbox(this)">
+<div class="slider-wrapper">
+<button class="arrow prev" onclick="slide('gallery',-1)">❮</button>
+<div class="slider-track" id="gallery">
+<img src="images/gallery1.jpg" onclick="openLB(this)">
+<img src="images/gallery2.jpg" onclick="openLB(this)">
+<img src="images/gallery3.jpg" onclick="openLB(this)">
+<img src="images/gallery4.jpg" onclick="openLB(this)">
+<img src="images/gallery5.jpg" onclick="openLB(this)">
+<img src="images/gallery6.jpg" onclick="openLB(this)">
+<img src="images/gallery7.jpg" onclick="openLB(this)">
+<img src="images/gallery8.jpg" onclick="openLB(this)">
+<img src="images/gallery9.jpg" onclick="openLB(this)">
+<img src="images/gallery10.jpg" onclick="openLB(this)">
+<img src="images/gallery11.jpg" onclick="openLB(this)">
 </div>
-<button class="next" onclick="slideGallery(1)">&#10095;</button>
+<button class="arrow next" onclick="slide('gallery',1)">❯</button>
 </div>
 </section>
 
-<!-- Lightbox -->
 <div id="lightbox">
-<span id="closeLightbox">&times;</span>
-<img id="lightboxImg" src="">
-</div>
-
-<!-- Contact Modal -->
-<div id="contactModal">
-<div id="contactModalContent">
-<span id="closeModal">&times;</span>
-<h2>Contact Us</h2>
-<form>
-<input type="text" placeholder="Your Name" required>
-<input type="email" placeholder="Your Email" required>
-<textarea placeholder="Message" rows="5" required></textarea>
-<button type="submit">Send Message</button>
-</form>
-<p style="text-align:center; margin-top:15px;">Email: indreshworhomestay@gmail.com</p>
-<p style="text-align:center;">Address: Panauti -07, Near Sorakhutte Pati / Ward 07 office</p>
-<p style="text-align:center;">Mobile: +977 9841356421</p>
-</div>
+<span onclick="closeLB()">&times;</span>
+<img id="lbImg">
 </div>
 
 <footer>
-&copy; 2026 Indreshwor Homestay. All rights reserved.
+© 2026 Indreshwor Homestay | Panauti, Nepal
 </footer>
 
 <script>
-// Contact modal
-const contactBtn=document.getElementById('contactBtn');
-const contactModal=document.getElementById('contactModal');
-const closeModal=document.getElementById('closeModal');
-contactBtn.addEventListener('click',e=>{ e.preventDefault(); contactModal.style.display='flex'; });
-closeModal.addEventListener('click',()=>{ contactModal.style.display='none'; });
-window.addEventListener('click',e=>{ if(e.target==contactModal){ contactModal.style.display='none'; } });
+let index={gallery:0,testimonial:0};
 
-// Testimonials Carousel
-let testimonialIndex=0;
-const testimonialCarousel=document.querySelector('.testimonials-carousel');
-const testimonialCards=document.querySelectorAll('.testimonial-card');
-function updateTestimonial() {
-    testimonialCarousel.style.transform=`translateX(-${testimonialIndex*100}%)`;
+function slide(id,dir){
+const track=document.getElementById(id);
+const total=track.children.length;
+index[id]+=dir;
+if(index[id]<0) index[id]=0;
+if(index[id]>=total) index[id]=total-1;
+track.style.transform=`translateX(-${index[id]*100}%)`;
 }
-function slideTestimonials(direction){
-    testimonialIndex+=direction;
-    if(testimonialIndex<0) testimonialIndex=0;
-    if(testimonialIndex>testimonialCards.length-1) testimonialIndex=testimonialCards.length-1;
-    updateTestimonial();
-}
-// Auto-slide testimonials
-setInterval(()=>{ testimonialIndex++; if(testimonialIndex>=testimonialCards.length) testimonialIndex=0; updateTestimonial(); },4000);
 
-// Gallery Carousel
-let galleryIndex=0;
-const galleryCarousel=document.querySelector('.gallery-carousel');
-const galleryImages=document.querySelectorAll('.gallery-carousel img');
-function updateGallery() {
-    galleryCarousel.style.transform=`translateX(-${galleryIndex*100}%)`;
+function openLB(img){
+document.getElementById("lbImg").src=img.src;
+document.getElementById("lightbox").style.display="flex";
 }
-function slideGallery(direction){
-    galleryIndex+=direction;
-    if(galleryIndex<0) galleryIndex=0;
-    if(galleryIndex>galleryImages.length-1) galleryIndex=galleryImages.length-1;
-    updateGallery();
+function closeLB(){
+document.getElementById("lightbox").style.display="none";
 }
-// Auto-slide gallery
-setInterval(()=>{ galleryIndex++; if(galleryIndex>=galleryImages.length) galleryIndex=0; updateGallery(); },5000);
-
-// Lightbox
-function openLightbox(img){
-    const lightbox=document.getElementById('lightbox');
-    const lightboxImg=document.getElementById('lightboxImg');
-    lightboxImg.src=img.src;
-    lightbox.classList.add('show');
-}
-document.getElementById('closeLightbox').addEventListener('click',()=>{document.getElementById('lightbox').classList.remove('show');});
-document.getElementById('lightbox').addEventListener('click',e=>{ if(e.target===document.getElementById('lightbox')){ e.target.classList.remove('show'); }});
 </script>
 
 </body>
