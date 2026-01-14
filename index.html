@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indreshwor Homestay | Authentic Stay in Panauti, Nepal</title>
+    <meta name="description" content="Experience authentic Newari hospitality at Indreshwor Homestay in Panauti. Free cooking classes, sightseeing, and family-run warmth.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #8d4925; /* Warm terracotta */
+            --secondary: #f4e9dc; /* Cream */
+            --text: #333;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Quicksand', sans-serif; line-height: 1.6; color: var(--text); background: var(--white); }
+        h1, h2, h3 { font-family: 'Lora', serif; color: var(--primary); }
+
+        /* Navigation */
+        nav { background: var(--white); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .logo { font-weight: 700; font-size: 1.5rem; color: var(--primary); text-decoration: none; }
+        .nav-links { list-style: none; display: flex; }
+        .nav-links li { margin-left: 20px; }
+        .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Hero Section */
+        .hero { 
+            height: 80vh; 
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1544735049-3179247eaec5?auto=format&fit=crop&w=1350&q=80'); 
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; padding: 20px;
+        }
+        .hero h1 { color: white; font-size: 3.5rem; margin-bottom: 1rem; }
+        .btn { background: var(--primary); color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; }
+        .btn:hover { background: #6b361b; }
+
+        /* Sections */
+        section { padding: 80px 10%; }
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        
+        /* Experience Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: var(--secondary); padding: 30px; border-radius: 10px; transition: 0.3s; }
+        .card i { font-size: 2rem; color: var(--primary); margin-bottom: 15px; }
+
+        /* Testimonials */
+        .testimonials { background: #f9f9f9; text-align: center; }
+        .testimonial-item { font-style: italic; margin-bottom: 20px; padding: 20px; border-left: 4px solid var(--primary); background: white; }
+
+        /* Contact & Footer */
+        .contact-info { text-align: center; }
+        footer { background: var(--primary); color: white; text-align: center; padding: 20px; }
+
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.2rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">Indreshwor Homestay</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experiences</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>Hospitality with Heart</h1>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">Authentic family stay in the historic town of Panauti, Nepal.</p>
+        <a href="https://wa.me/9779841000000" class="btn">Book via WhatsApp</a> </section>
+
+    <section id="about">
+        <div class="about-grid">
+            <div>
+                <h2 class="section-title" style="text-align: left;">Welcome to Our Home</h2>
+                <p>Since 2019, <strong>Indreshwor Homestay</strong> has offered visitors a warm and friendly place to call home while they visit Panauti. As a family-run business, quality with a personal touch is our number one goal.</p>
+                <br>
+                <p>Our roomy layout, cozy living area, and delicious home-made breakfast make our stay perfect for individuals, couples, and families looking to recharge.</p>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?auto=format&fit=crop&w=800&q=80" alt="Homestay" style="width: 100%; border-radius: 10px;">
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" style="background-color: #fffaf5;">
+        <h2 class="section-title">Enriching Experiences</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-utensils"></i>
+                <h3>Free Cooking Classes</h3>
+                <p>Learn to prepare authentic Nepali dishes alongside our family. From selecting fresh ingredients to mastering traditional Newari techniques.</p>
+            </div>
+            <div
