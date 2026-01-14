@@ -64,6 +64,33 @@ button { padding:10px; border:none; border-radius:5px; background:#28a745; color
     nav { flex-direction:column; gap:10px; }
 }
 </style>
+    #lightbox {
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.9);
+    z-index:500;
+    justify-content:center;
+    align-items:center;
+    display:flex;
+}
+#lightbox img {
+    max-width:90%;
+    max-height:90%;
+    border-radius:10px;
+}
+#closeLightbox {
+    position:absolute;
+    top:20px;
+    right:30px;
+    font-size:30px;
+    color:#fff;
+    cursor:pointer;
+}
+
 </head>
 <body>
 
@@ -133,17 +160,23 @@ button { padding:10px; border:none; border-radius:5px; background:#28a745; color
     </div>
 </section>
 
-<!-- Gallery Section -->
 <section id="gallery">
     <h2>Gallery</h2>
     <div class="gallery">
-        <img src="images/gallery1.jpg" alt="Gallery 1">
-        <img src="images/gallery2.jpg" alt="Gallery 2">
-        <img src="images/gallery3.jpg" alt="Gallery 3">
-        <img src="images/gallery4.jpg" alt="Gallery 4">
-        <img src="images/gallery5.jpg" alt="Gallery 5">
-        <img src="images/gallery6.jpg" alt="Gallery 6">
+        <img src="images/gallery1.jpg" alt="Gallery 1" onclick="openLightbox(this)">
+        <img src="images/gallery2.jpg" alt="Gallery 2" onclick="openLightbox(this)">
+        <img src="images/gallery3.jpg" alt="Gallery 3" onclick="openLightbox(this)">
+        <img src="images/gallery4.jpg" alt="Gallery 4" onclick="openLightbox(this)">
+        <img src="images/gallery5.jpg" alt="Gallery 5" onclick="openLightbox(this)">
+        <img src="images/gallery6.jpg" alt="Gallery 6" onclick="openLightbox(this)">
     </div>
+</section>
+
+<!-- Lightbox Overlay -->
+<div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:500; justify-content:center; align-items:center;">
+    <span id="closeLightbox" style="position:absolute; top:20px; right:30px; font-size:30px; color:#fff; cursor:pointer;">&times;</span>
+    <img id="lightboxImg" src="" style="max-width:90%; max-height:90%; border-radius:10px;">
+</div>
 </section>
 
 <!-- Testimonials -->
@@ -202,6 +235,28 @@ window.addEventListener('click', function(e){
     }
 });
 </script>
+    <script>
+// Open lightbox
+function openLightbox(img) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    lightboxImg.src = img.src;
+    lightbox.style.display = 'flex';
+}
+
+// Close lightbox
+document.getElementById('closeLightbox').addEventListener('click', function(){
+    document.getElementById('lightbox').style.display = 'none';
+});
+
+// Click outside image to close
+document.getElementById('lightbox').addEventListener('click', function(e){
+    if(e.target === this){
+        this.style.display = 'none';
+    }
+});
+</script>
+
 
 </body>
 </html>
