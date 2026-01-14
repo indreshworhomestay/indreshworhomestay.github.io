@@ -12,12 +12,14 @@
     nav { display:flex; justify-content:space-between; align-items:center; padding:20px 50px; background:#fff; position:sticky; top:0; box-shadow:0 2px 5px rgba(0,0,0,0.1); z-index:100; }
     nav ul { display:flex; list-style:none; gap:20px; }
     nav ul li { font-weight:500; }
+    nav .logo a { font-weight:bold; font-size:1.5rem; color:#28a745; }
     header { height:90vh; background:url('images/hero.jpg') center/cover no-repeat; display:flex; flex-direction:column; justify-content:center; align-items:center; color:#fff; text-align:center; }
     header h1 { font-size:3rem; margin-bottom:10px; text-shadow:2px 2px 5px rgba(0,0,0,0.5); }
     header p { font-size:1.2rem; text-shadow:1px 1px 3px rgba(0,0,0,0.5); }
+    header a.button { padding:12px 25px; background:#28a745; color:#fff; font-weight:bold; border-radius:5px; margin-top:20px; display:inline-block; }
     section { padding:80px 50px; }
     section h2 { text-align:center; margin-bottom:40px; font-size:2.5rem; color:#333; }
-    .about, .rooms, .experiences, .gallery, .contact { max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
+    .about, .rooms, .experiences, .testimonials, .gallery, .contact { max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
     .card { flex:1 1 300px; background:#f9f9f9; padding:20px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1); text-align:center; }
     .card img { width:100%; border-radius:10px; margin-bottom:15px; }
     .gallery img { width:250px; border-radius:10px; transition:0.3s; }
@@ -26,6 +28,7 @@
     .contact form input, .contact form textarea { padding:10px; border-radius:5px; border:1px solid #ccc; width:100%; }
     .contact form button { padding:10px; border:none; border-radius:5px; background:#28a745; color:#fff; font-weight:bold; cursor:pointer; }
     footer { background:#333; color:#fff; text-align:center; padding:20px; }
+    .faq { background:#f9f9f9; padding:20px; border-radius:10px; margin:10px 0; }
 </style>
 </head>
 <body>
@@ -36,7 +39,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#rooms">Rooms</a></li>
         <li><a href="#experiences">Experiences</a></li>
-        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
@@ -44,13 +47,14 @@
 <header>
     <h1>Welcome to Indreshwor Homestay</h1>
     <p>Authentic Stay in Panauti, Nepal</p>
+    <a class="button" href="https://wa.me/9779841356421" target="_blank">Book via WhatsApp</a>
 </header>
 
 <section id="about">
     <h2>About Us</h2>
     <div class="about">
         <div class="card">
-            <p>Experience the warm hospitality of Panauti, stay in our cozy rooms, and enjoy the local culture. Perfect for families, solo travelers, and couples.</p>
+            <p>Welcome to our family-run homestay nestled in the heart of Panauti. With four cozy rooms and a commitment to hospitality, we invite you to experience the warmth of our home as your own. Immerse yourself in the rich culture of Panauti with complimentary sightseeing tours, and savor the flavors of local cuisine with complimentary cooking classes. Let us be your gateway to authentic experiences and cherished memories in this enchanting corner of Nepal. Our homestay prides itself on being a serene sanctuary away from the hustle and bustle of city life. Whether you're seeking a peaceful getaway or eager to explore the hidden gems of the area, our homestay promises a memorable stay filled with warmth and hospitality.</p>
         </div>
     </div>
 </section>
@@ -60,13 +64,18 @@
     <div class="rooms">
         <div class="card">
             <img src="images/room1.jpg" alt="Room 1">
-            <h3>Standard Room</h3>
-            <p>Comfortable room with all basic amenities.</p>
+            <h3>Room 1</h3>
+            <p>Cozy room with 2 double beds. Perfect for families or groups.</p>
         </div>
         <div class="card">
             <img src="images/room2.jpg" alt="Room 2">
-            <h3>Deluxe Room</h3>
-            <p>Spacious room with balcony and scenic view.</p>
+            <h3>Room 2</h3>
+            <p>Cozy room with 2 double beds. Perfect for families or groups.</p>
+        </div>
+        <div class="card">
+            <img src="images/room3.jpg" alt="Room 3">
+            <h3>Room 3</h3>
+            <p>Spacious room with 1 single bed and 2 double beds. Ideal for larger families.</p>
         </div>
     </div>
 </section>
@@ -75,22 +84,38 @@
     <h2>Experiences</h2>
     <div class="experiences">
         <div class="card">
-            <h3>Local Tours</h3>
-            <p>Explore temples, rivers, and cultural sites nearby.</p>
+            <h3>Cooking Classes</h3>
+            <p>Learn to prepare authentic Nepali dishes in our hands-on cooking classes with the family.</p>
         </div>
         <div class="card">
-            <h3>Traditional Food</h3>
-            <p>Enjoy authentic Nepali meals prepared with love.</p>
+            <h3>Sightseeing Tours</h3>
+            <p>Explore Panauti’s temples, heritage sites, and hidden gems with complimentary guided tours.</p>
         </div>
     </div>
 </section>
 
-<section id="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery">
-        <img src="images/gallery1.jpg" alt="Gallery 1">
-        <img src="images/gallery2.jpg" alt="Gallery 2">
-        <img src="images/gallery3.jpg" alt="Gallery 3">
+<section id="testimonials">
+    <h2>Testimonials</h2>
+    <div class="testimonials">
+        <div class="card"><p>“I’m Nataly from Colombia. I stayed two beautiful nights in this Homestay and had some amazing days in Panauti. The family took me in as one of the members and always gave me a warm welcome.”</p><strong>- Nataly</strong></div>
+        <div class="card"><p>“Panauti is an amazing historical town! Everyone should pay a visit here! Great hospitality and you won’t be regretted!”</p><strong>- Audrianna</strong></div>
+        <div class="card"><p>“Thank you for the lovely hospitality and the delicious food. We really enjoyed our stay here and look forward to coming back.”</p><strong>- Rubina & Yukta</strong></div>
+        <div class="card"><p>“Thank you for lovely time. I like Panauti. I like people here. I sleep very well. Food is amazing papa. Mama are very kind, warm. I love it here.”</p><strong>- Chie</strong></div>
+        <div class="card"><p>“Thank you very much, Amigos. I felt totally at home. Home food, great talk and trust. A great opportunity to experience Nepal from inside.”</p><strong>- Inigo</strong></div>
+        <div class="card"><p>“Thank you so much for let me be at your home. I had best Newari food, and I feel more motivated to do a volunteer at the school.”</p><strong>- Ely</strong></div>
+        <div class="card"><p>“Thanks a lot for this incredible stay! We had really good time with you and also really good food. Thanks very much for the visit of the school.”</p><strong>- Fanny</strong></div>
+        <div class="card"><p>“Thank you so much for this moment, it was a real pleasure to meet you. All the best for the future. See you next time I hope!”</p><strong>- Maxence</strong></div>
+    </div>
+</section>
+
+<section id="faqs">
+    <h2>FAQs</h2>
+    <div class="about">
+        <div class="faq"><strong>Do I need to pay for the total cost of accommodation at the time of booking?</strong><p>No, you do not. You can pay after visiting the homestay.</p></div>
+        <div class="faq"><strong>How do I find the accommodation?</strong><p>You can find us on Maps (Indreshwor Homestay) or follow directions from the local bus park as described.</p></div>
+        <div class="faq"><strong>Does the accommodation have Wi-Fi?</strong><p>Yes, we have free Wi-Fi available.</p></div>
+        <div class="faq"><strong>Is it possible to use the kitchen?</strong><p>Yes, the kitchen is available with induction and gas stove.</p></div>
+        <div class="faq"><strong>What type of breakfast is provided?</strong><p>Typical Nepali breakfast is provided.</p></div>
     </div>
 </section>
 
@@ -103,7 +128,9 @@
             <textarea placeholder="Message" rows="5" required></textarea>
             <button type="submit">Send Message</button>
         </form>
-        <p style="text-align:center; margin-top:15px;">Call / WhatsApp: +977-98430XXXXX</p>
+        <p style="text-align:center; margin-top:15px;">Email: indreshworhomestay@gmail.com</p>
+        <p style="text-align:center;">Address: Panauti -07, Near Sorakhutte Pati / Ward 07 office</p>
+        <p style="text-align:center;">Mobile: +977 9841356421</p>
     </div>
 </section>
 
