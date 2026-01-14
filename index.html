@@ -7,32 +7,62 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
 * { margin:0; padding:0; box-sizing:border-box; font-family: 'Roboto', sans-serif; }
-body { line-height:1.6; }
+body { line-height:1.6; background-color:#fdf6f0; color:#333; }
 a { text-decoration:none; color:#333; }
 nav { display:flex; justify-content:space-between; align-items:center; padding:20px 50px; background:#fff; position:sticky; top:0; box-shadow:0 2px 5px rgba(0,0,0,0.1); z-index:100; }
 nav ul { display:flex; list-style:none; gap:20px; }
 nav ul li { font-weight:500; }
 nav .logo a { font-weight:bold; font-size:1.5rem; color:#28a745; }
-header { height:90vh; background:url('images/hero.jpg') center/cover no-repeat; display:flex; flex-direction:column; justify-content:center; align-items:center; color:#fff; text-align:center; }
-header h1 { font-size:3rem; margin-bottom:10px; text-shadow:2px 2px 5px rgba(0,0,0,0.5); }
-header p { font-size:1.2rem; text-shadow:1px 1px 3px rgba(0,0,0,0.5); }
+
+/* Hero section with background image and overlay */
+header {
+    height:90vh;
+    background:url('images/hero.jpg') center/cover no-repeat;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+    color:#fff;
+}
+header::before {
+    content:"";
+    position:absolute;
+    top:0; left:0; width:100%; height:100%;
+    background: rgba(0,0,0,0.4);
+    z-index:1;
+}
+header h1, header p, header a.button { position:relative; z-index:2; }
+header h1 { font-size:3rem; margin-bottom:10px; text-shadow:2px 2px 5px rgba(0,0,0,0.7); }
+header p { font-size:1.2rem; text-shadow:1px 1px 3px rgba(0,0,0,0.7); }
 header a.button { padding:12px 25px; background:#28a745; color:#fff; font-weight:bold; border-radius:5px; margin-top:20px; display:inline-block; }
+
 section { padding:80px 50px; }
 section h2 { text-align:center; margin-bottom:40px; font-size:2.5rem; color:#333; }
-.about, .rooms, .experiences, .testimonials, .gallery { max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
+.about, .rooms, .experiences, .testimonials { max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
 .card { flex:1 1 300px; background:#f9f9f9; padding:20px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1); text-align:center; }
 .card img { width:100%; border-radius:10px; margin-bottom:15px; }
-.gallery { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:15px; }
+
+/* Gallery Section */
+.gallery { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:15px; max-width:1200px; margin:0 auto; }
 .gallery img { width:100%; border-radius:10px; transition:0.3s; }
 .gallery img:hover { transform:scale(1.05); }
+
 .faq { background:#f9f9f9; padding:20px; border-radius:10px; margin:10px 0; }
 footer { background:#333; color:#fff; text-align:center; padding:20px; }
 button { padding:10px; border:none; border-radius:5px; background:#28a745; color:#fff; font-weight:bold; cursor:pointer; }
+
+/* Contact modal */
 #contactModal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:200; justify-content:center; align-items:center; }
 #contactModalContent { background:#fff; padding:30px; border-radius:10px; max-width:500px; width:90%; position:relative; }
 #closeModal { position:absolute; top:10px; right:15px; cursor:pointer; font-weight:bold; font-size:18px; }
 .contact form { display:flex; flex-direction:column; gap:15px; width:100%; }
 .contact form input, .contact form textarea { padding:10px; border-radius:5px; border:1px solid #ccc; width:100%; }
+
+@media(max-width:768px){
+    nav { flex-direction:column; gap:10px; }
+}
 </style>
 </head>
 <body>
@@ -49,7 +79,7 @@ button { padding:10px; border:none; border-radius:5px; background:#28a745; color
     </ul>
 </nav>
 
-<!-- Hero -->
+<!-- Hero Section -->
 <header>
     <h1>Welcome to Indreshwor Homestay</h1>
     <p>Authentic Stay in Panauti, Nepal</p>
@@ -61,7 +91,7 @@ button { padding:10px; border:none; border-radius:5px; background:#28a745; color
     <h2>About Us</h2>
     <div class="about">
         <div class="card">
-            <p>Welcome to our family-run homestay nestled in the heart of Panauti. With four cozy rooms and a commitment to hospitality, we invite you to experience the warmth of our home as your own. Immerse yourself in the rich culture of Panauti with complimentary sightseeing tours, and savor the flavors of local cuisine with complimentary cooking classes. Let us be your gateway to authentic experiences and cherished memories in this enchanting corner of Nepal. Our homestay prides itself on being a serene sanctuary away from the hustle and bustle of city life. Whether you're seeking a peaceful getaway or eager to explore the hidden gems of the area, our homestay promises a memorable stay filled with warmth and hospitality.</p>
+            <p>Welcome to our family-run homestay nestled in the heart of Panauti. With four cozy rooms and a commitment to hospitality, we invite you to experience the warmth of our home as your own. Immerse yourself in the rich culture of Panauti with complimentary sightseeing tours, and savor the flavors of local cuisine with complimentary cooking classes. Let us be your gateway to authentic experiences and cherished memories in this enchanting corner of Nepal. Our homestay prides itself on being a serene sanctuary away from the hustle and bustle of city life. \Whether you’re seeking a peaceful getaway or eager to explore the hidden gems of the area, our homestay promises a memorable stay filled with warmth and hospitality.</p>
         </div>
     </div>
 </section>
@@ -103,7 +133,7 @@ button { padding:10px; border:none; border-radius:5px; background:#28a745; color
     </div>
 </section>
 
-<!-- Gallery -->
+<!-- Gallery Section -->
 <section id="gallery">
     <h2>Gallery</h2>
     <div class="gallery">
