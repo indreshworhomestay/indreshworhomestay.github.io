@@ -3,237 +3,209 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Indreshwor Homestay | Panauti, Nepal</title>
-<meta name="description" content="Indreshwor Homestay in Panauti, Nepal. Family-run homestay with cozy rooms, cooking classes, sightseeing tours, and authentic Nepali experiences.">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<title>Indreshwor Homestay | Authentic Stay in Panauti Nepal</title>
+
+<meta name="description" content="Indreshwor Homestay in Panauti offers cozy rooms, complimentary sightseeing tours, Nepali cooking classes, and authentic local experiences.">
+<meta name="keywords" content="Indreshwor Homestay, Panauti Homestay, Nepal Homestay, Near Indreshwor Temple">
+<meta name="author" content="Indreshwor Homestay">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#f2f5f7;color:#333;line-height:1.7}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial}
+body{background:#f4f7fb;color:#333}
 
 /* NAVBAR */
 nav{
-display:flex;justify-content:space-between;align-items:center;
-padding:18px 60px;background:#fff;
-box-shadow:0 8px 25px rgba(0,0,0,.08);
-position:sticky;top:0;z-index:100
+  position:sticky;top:0;z-index:100;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 40px;
+  background:rgba(255,255,255,.95);
+  box-shadow:0 10px 30px rgba(0,0,0,.08)
 }
-nav .logo{
-font-size:1.6rem;font-weight:600;color:#2c9c5f;cursor:pointer
+.logo{
+  font-size:22px;font-weight:700;color:#0b4a6f;
+  cursor:pointer
 }
-nav ul{display:flex;gap:25px;list-style:none}
+nav ul{display:flex;gap:22px;list-style:none}
 nav a{text-decoration:none;color:#333;font-weight:500}
-nav a:hover{color:#2c9c5f}
+nav a:hover{color:#0b4a6f}
 
 /* HERO */
 .hero{
-background:url('images/indreshwor-temple-1.jpg') center/cover no-repeat;
-height:500px;
-display:flex;
-align-items:center;
-justify-content:center;
-color:#fff;
-text-align:center;
-font-size:2.8rem;
-font-weight:600;
-text-shadow:0 6px 20px rgba(0,0,0,.5);
+  height:70vh;
+  background:url("images/indreshwor-temple-1.jpg") center/cover no-repeat;
+  display:flex;align-items:center;justify-content:center;
+  position:relative
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:rgba(0,0,0,.45)
+}
+.hero h1{
+  position:relative;color:#fff;font-size:48px;
+  background:rgba(0,0,0,.45);
+  padding:20px 40px;border-radius:16px
 }
 
 /* SECTIONS */
-section{padding:80px 60px;max-width:1200px;margin:auto}
-h2{color:#2c9c5f;margin-bottom:25px;font-size:2rem}
-.card{background:#fff;padding:25px;border-radius:18px;box-shadow:0 12px 30px rgba(0,0,0,.08)}
-.experience-box{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-bottom:100px;align-items:center}
+section{padding:80px 10%}
+h2{text-align:center;margin-bottom:40px;font-size:34px;color:#0b4a6f}
+p{line-height:1.7}
 
-/* SLIDERS */
+/* SLIDER COMMON */
 .slider{
-position:relative;width:100%;height:300px;overflow:hidden;border-radius:22px;box-shadow:0 15px 35px rgba(0,0,0,.12);margin-bottom:30px
+  position:relative;
+  width:100%;
+  height:340px;
+  overflow:hidden;
+  border-radius:24px;
+  background:#000;
+  box-shadow:0 20px 50px rgba(0,0,0,.15)
 }
 .slide{
-position:absolute;width:100%;height:100%;opacity:0;transition:opacity .6s ease
+  position:absolute;
+  inset:0;
+  opacity:0;
+  transition:opacity .8s ease
 }
-.slide img{width:100%;height:100%;object-fit:cover;cursor:pointer}
 .slide.active{opacity:1}
-.controls{
-position:absolute;top:50%;width:100%;display:flex;justify-content:space-between;transform:translateY(-50%);padding:0 20px
+.slide img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  background:#000;
+  cursor:pointer
 }
+
+/* FUTURISTIC BUTTONS */
 .btn{
-width:45px;height:45px;border-radius:50%;border:none;background:rgba(0,0,0,.6);
-color:#fff;font-size:20px;cursor:pointer;backdrop-filter:blur(6px)
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:54px;height:54px;border-radius:50%;
+  border:none;cursor:pointer;
+  background:rgba(255,255,255,.85);
+  font-size:22px;
+  box-shadow:0 8px 20px rgba(0,0,0,.3)
 }
-.btn:hover{background:#2c9c5f}
+.btn:hover{background:#fff}
+.prev{left:18px}
+.next{right:18px}
+
+/* TESTIMONIAL */
+.testimonial{
+  text-align:center;
+  background:#fff;
+  padding:40px;
+  border-radius:24px;
+  box-shadow:0 10px 30px rgba(0,0,0,.1)
+}
 
 /* LIGHTBOX */
 #lightbox{
-display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.92);
-z-index:999;justify-content:center;align-items:center
+  display:none;
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.9);
+  z-index:999;
+  justify-content:center;
+  align-items:center
 }
-#lightbox img{max-width:90%;max-height:90%;border-radius:15px}
-#closeLightbox{position:absolute;top:25px;right:40px;font-size:32px;color:#fff;cursor:pointer}
-
-/* TESTIMONIAL */
-.testimonial-box{position:relative;max-width:900px;margin:auto;margin-bottom:60px}
-.testimonial-slide{position:absolute;width:100%;opacity:0;transition:opacity .6s ease;text-align:center;padding:40px;background:#fff;border-radius:22px;box-shadow:0 12px 30px rgba(0,0,0,.08)}
-.testimonial-slide.active{opacity:1}
-.testimonial-slide p{font-size:1rem;margin-bottom:15px;font-style:italic}
-.testimonial-slide h3{color:#2c9c5f;font-weight:600}
-
-/* GALLERY */
-.gallery-slide img{width:100%;height:250px;object-fit:cover;border-radius:22px}
-
-/* FOOTER */
-footer{text-align:center;padding:35px;background:#111;color:#fff;margin-top:50px}
-
-@media(max-width:900px){
-.hero{height:300px;font-size:1.8rem}
-.experience-box{grid-template-columns:1fr}
-.slider{height:200px}
-.gallery-slide img{height:180px}
+#lightbox img{max-width:95%;max-height:95%}
+#closeLightbox{
+  position:absolute;top:20px;right:30px;
+  font-size:34px;color:#fff;cursor:pointer
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <nav>
   <div class="logo" onclick="location.href='index.html'">Indreshwor Homestay</div>
   <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#rooms">Rooms</a></li>
-    <li><a href="#experiences">Experiences</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="rooms.html">Rooms</a></li>
+    <li><a href="experiences.html">Experiences</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
-<div class="hero">Welcome to Indreshwor Homestay</div>
-
-<!-- ABOUT -->
-<section id="about">
-<h2>About Us</h2>
-<div class="card">
-<p>Welcome to our family-run homestay nestled in the heart of Panauti. With four cozy rooms and a commitment to hospitality, we invite you to experience the warmth of our home as your own. Immerse yourself in the rich culture of Panauti with complimentary sightseeing tours, and savor the flavors of local cuisine with complimentary cooking classes. Let us be your gateway to authentic experiences and cherished memories in this enchanting corner of Nepal. Our homestay prides itself on being a serene sanctuary away from the hustle and bustle of city life. Whether you’re seeking a peaceful getaway or eager to explore the hidden gems of the area, our homestay promises a memorable stay filled with warmth and hospitality.</p>
+<div class="hero">
+  <h1>Welcome to Indreshwor Homestay</h1>
 </div>
+
+<section>
+<h2>About Us</h2>
+<p>
+Welcome to our family-run homestay nestled in the heart of Panauti. With four cozy rooms and a commitment to heartfelt hospitality, we invite you to experience the warmth of our home as your own.
+<br><br>
+Our homestay is a serene sanctuary away from the bustle of city life, offering authentic local experiences, complimentary sightseeing tours, and hands-on Nepali cooking classes that create lasting memories.
+</p>
 </section>
 
-<!-- EXPERIENCES -->
-<section id="experiences">
+<section>
 <h2>Experiences</h2>
 
-<div class="experience-box">
-  <div class="slider" id="cookingSlider">
-    <div class="slide active"><img src="images/cooking1.jpg" onclick="openLightbox(this)"></div>
-    <div class="slide"><img src="images/cooking2.jpg" onclick="openLightbox(this)"></div>
-    <div class="slide"><img src="images/cooking3.jpg" onclick="openLightbox(this)"></div>
-    <div class="controls">
-      <button class="btn" onclick="prevSlide('cookingSlider')">&#10094;</button>
-      <button class="btn" onclick="nextSlide('cookingSlider')">&#10095;</button>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>Cooking Classes</h3>
-    <p>At our homestay, we offer hands-on Nepali cooking classes where guests learn to prepare authentic dishes, participate in every step, and immerse themselves in local culinary culture.</p>
-  </div>
+<h3>Cooking Experience</h3>
+<div class="slider" id="cookSlider">
+  <div class="slide active"><img src="images/cooking1.jpg" onclick="openLightbox(this)"></div>
+  <div class="slide"><img src="images/cooking2.jpg" onclick="openLightbox(this)"></div>
+  <button class="btn prev" onclick="slide('cookSlider',-1)">&#10094;</button>
+  <button class="btn next" onclick="slide('cookSlider',1)">&#10095;</button>
 </div>
 
-<div class="experience-box">
-  <div class="card">
-    <h3>Sightseeing Tours</h3>
-    <p>Explore Panauti's rich heritage with guided tours to Namobuddha, Sorakhutte Pati, Indreshwor Temple, Triveni Ghat, and Gorakhnath Temple. Every step offers a journey into Nepalese culture and spirituality.</p>
-  </div>
+<br><br>
 
-  <div class="slider" id="sightseeingSlider">
-    <div class="slide active"><img src="images/sight1.jpg" onclick="openLightbox(this)"></div>
-    <div class="slide"><img src="images/sight2.jpg" onclick="openLightbox(this)"></div>
-    <div class="slide"><img src="images/sight3.jpg" onclick="openLightbox(this)"></div>
-    <div class="controls">
-      <button class="btn" onclick="prevSlide('sightseeingSlider')">&#10094;</button>
-      <button class="btn" onclick="nextSlide('sightseeingSlider')">&#10095;</button>
-    </div>
-  </div>
-</div>
-
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-<h2>What Our Guests Say</h2>
-<div class="testimonial-box">
-  <div class="testimonial-slide active">
-    <p>“I’m Nataly from Colombia. The family took me in as one of the members and always gave me a warm welcome. Loved cooking together and learning Nepali culture.”</p>
-    <h3>- Nataly</h3>
-  </div>
-  <div class="testimonial-slide">
-    <p>“Panauti is an amazing historical town! Great hospitality and you won’t be regretted!”</p>
-    <h3>- Audrianna</h3>
-  </div>
-  <div class="testimonial-slide">
-    <p>“Thank you for the lovely hospitality and the delicious food. We really enjoyed our stay here and look forward to coming back.”</p>
-    <h3>- Rubina & Yukta</h3>
-  </div>
-  <div class="controls">
-    <button class="btn" onclick="prevSlide('testimonials')">&#10094;</button>
-    <button class="btn" onclick="nextSlide('testimonials')">&#10095;</button>
-  </div>
+<h3>Sightseeing</h3>
+<div class="slider" id="sightSlider">
+  <div class="slide active"><img src="images/sight1.jpg" onclick="openLightbox(this)"></div>
+  <div class="slide"><img src="images/sight2.jpg" onclick="openLightbox(this)"></div>
+  <button class="btn prev" onclick="slide('sightSlider',-1)">&#10094;</button>
+  <button class="btn next" onclick="slide('sightSlider',1)">&#10095;</button>
 </div>
 </section>
 
-<!-- GALLERY -->
-<section id="gallery">
+<section>
 <h2>Gallery</h2>
 <div class="slider" id="gallerySlider">
   <div class="slide active"><img src="images/gallery1.jpg" onclick="openLightbox(this)"></div>
   <div class="slide"><img src="images/gallery2.jpg" onclick="openLightbox(this)"></div>
   <div class="slide"><img src="images/gallery3.jpg" onclick="openLightbox(this)"></div>
-  <div class="slide"><img src="images/gallery4.jpg" onclick="openLightbox(this)"></div>
-  <div class="controls">
-    <button class="btn" onclick="prevSlide('gallerySlider')">&#10094;</button>
-    <button class="btn" onclick="nextSlide('gallerySlider')">&#10095;</button>
-  </div>
+  <button class="btn prev" onclick="slide('gallerySlider',-1)">&#10094;</button>
+  <button class="btn next" onclick="slide('gallerySlider',1)">&#10095;</button>
 </div>
 </section>
 
-<!-- LIGHTBOX -->
+<section>
+<h2>Testimonials</h2>
+<div class="slider" id="testSlider">
+  <div class="slide active testimonial">“Amazing hospitality and peaceful stay.”</div>
+  <div class="slide testimonial">“Authentic food and warm family atmosphere.”</div>
+  <div class="slide testimonial">“Best homestay experience in Panauti.”</div>
+</div>
+</section>
+
 <div id="lightbox">
   <span id="closeLightbox" onclick="closeLightbox()">×</span>
   <img id="lightboxImg">
 </div>
 
-<!-- FOOTER -->
-<footer>
-© 2026 Indreshwor Homestay | Panauti, Nepal
-</footer>
-
 <script>
-// Universal Slider
-function nextSlide(id){
-  let slides=document.querySelectorAll(`#${id} .slide`);
-  let i=[...slides].findIndex(s=>s.classList.contains('active'));
-  slides[i].classList.remove('active');
-  slides[(i+1)%slides.length].classList.add('active');
-}
-function prevSlide(id){
-  let slides=document.querySelectorAll(`#${id} .slide`);
-  let i=[...slides].findIndex(s=>s.classList.contains('active'));
-  slides[i].classList.remove('active');
-  slides[(i-1+slides.length)%slides.length].classList.add('active');
+function slide(id,dir){
+  const slides=document.querySelectorAll(`#${id} .slide`);
+  let i=[...slides].findIndex(s=>s.classList.contains("active"));
+  slides[i].classList.remove("active");
+  i=(i+dir+slides.length)%slides.length;
+  slides[i].classList.add("active");
 }
 
-// Testimonial auto-loop
-setInterval(()=>nextSlide('testimonials'),4000);
+setInterval(()=>slide("gallerySlider",1),5000);
+setInterval(()=>slide("testSlider",1),4000);
 
-// LIGHTBOX
 function openLightbox(img){
-  document.getElementById('lightbox').style.display='flex';
-  document.getElementById('lightboxImg').src=img.src;
+  lightbox.style.display="flex";
+  lightboxImg.src=img.src;
 }
-function closeLightbox(){
-  document.getElementById('lightbox').style.display='none';
-}
+function closeLightbox(){lightbox.style.display="none";}
 </script>
 
 </body>
