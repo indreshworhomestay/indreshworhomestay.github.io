@@ -185,8 +185,10 @@ footer{
 </nav>
 
 <div class="hero">
+  <img src="images/indreshwor-temple-1.jpg" alt="Indreshwor Temple">
   <h1>Welcome to Indreshwor Homestay</h1>
 </div>
+
 
 <!-- ABOUT -->
 <section>
@@ -370,6 +372,14 @@ function openLightbox(img){
   lightboxImg.src=img.src;
 }
 function closeLightbox(){lightbox.style.display="none";}
+</script>
+<script>
+// Parallax effect for hero image
+window.addEventListener("scroll", function() {
+  const heroImg = document.querySelector(".hero img");
+  const scrollPos = window.scrollY;
+  heroImg.style.transform = `translate(-50%, ${scrollPos * 0.2}px)`; 
+});
 </script>
 
 </body>
