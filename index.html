@@ -5,23 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Indreshwor Homestay | Panauti Nepal</title>
 
-<meta name="description" content="Family-run homestay in Panauti Nepal offering cozy rooms, Nepali cooking classes, sightseeing tours, and authentic hospitality.">
-
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial}
-body{background:#eef2f7;color:#333}
+body{background:#f1f4f9;color:#333}
 
 /* NAVBAR */
 nav{
   position:sticky;top:0;z-index:100;
+  background:#fff;
   display:flex;justify-content:space-between;align-items:center;
   padding:14px 40px;
-  background:#fff;
-  box-shadow:0 8px 30px rgba(0,0,0,.1)
+  box-shadow:0 10px 30px rgba(0,0,0,.1)
 }
 .logo{font-size:22px;font-weight:700;color:#0b4a6f;cursor:pointer}
-nav ul{display:flex;gap:22px;list-style:none}
-nav a{text-decoration:none;color:#333}
+nav ul{display:flex;gap:24px;list-style:none}
+nav a{text-decoration:none;color:#333;font-weight:500}
 nav a:hover{color:#0b4a6f}
 
 /* HERO */
@@ -33,9 +31,12 @@ nav a:hover{color:#0b4a6f}
 }
 .hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
 .hero h1{
-  position:relative;color:#fff;font-size:46px;
-  padding:18px 40px;border-radius:16px;
-  background:rgba(0,0,0,.55)
+  position:relative;
+  color:#fff;
+  background:rgba(0,0,0,.55);
+  padding:20px 40px;
+  border-radius:16px;
+  font-size:46px
 }
 
 /* SECTION */
@@ -47,25 +48,36 @@ p{line-height:1.8}
 .box{
   background:#fff;
   padding:40px;
-  border-radius:24px;
+  border-radius:22px;
   box-shadow:0 15px 40px rgba(0,0,0,.12)
+}
+
+/* ROOMS GRID */
+.rooms-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:30px
+}
+.rooms-grid img{
+  width:100%;
+  height:200px;
+  object-fit:contain;
+  background:#000;
+  border-radius:16px
 }
 
 /* SLIDER */
 .slider{
   position:relative;
-  width:100%;
-  height:220px;
+  width:50%;
+  height:260px;
+  margin:20px auto;
   background:#000;
   overflow:hidden;
-  border-radius:20px;
-  margin-top:20px
+  border-radius:20px
 }
-.slide{
-  position:absolute;inset:0;
-  opacity:0;
-  transition:opacity .7s ease
-}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity .7s}
 .slide.active{opacity:1}
 .slide img{
   width:100%;
@@ -78,24 +90,37 @@ p{line-height:1.8}
 /* BUTTON */
 .btn{
   position:absolute;top:50%;transform:translateY(-50%);
-  width:46px;height:46px;border-radius:50%;
-  border:none;cursor:pointer;
+  width:44px;height:44px;
+  border-radius:50%;
+  border:none;
+  cursor:pointer;
   background:rgba(255,255,255,.9);
   font-size:20px;
   box-shadow:0 8px 20px rgba(0,0,0,.4)
 }
-.prev{left:15px}
-.next{right:15px}
+.prev{left:12px}
+.next{right:12px}
 
 /* TESTIMONIAL */
 .testimonial{
-  text-align:center;
-  padding:30px;
+  max-width:600px;
+  margin:0 auto;
   background:#fff;
-  border-radius:22px;
-  box-shadow:0 12px 35px rgba(0,0,0,.15)
+  padding:24px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 12px 30px rgba(0,0,0,.15)
 }
-.author{margin-top:14px;font-weight:600;color:#0b4a6f}
+.author{margin-top:12px;font-weight:600;color:#0b4a6f}
+
+/* MAP */
+.map{
+  width:100%;
+  height:380px;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 15px 35px rgba(0,0,0,.15)
+}
 
 /* LIGHTBOX */
 #lightbox{
@@ -106,15 +131,17 @@ p{line-height:1.8}
   justify-content:center;align-items:center
 }
 #lightbox img{max-width:95%;max-height:95%}
-#closeLightbox{position:absolute;top:20px;right:30px;font-size:34px;color:#fff;cursor:pointer}
+#closeLightbox{
+  position:absolute;top:20px;right:30px;
+  font-size:34px;color:#fff;cursor:pointer
+}
 
 /* FOOTER */
 footer{
   background:#0b4a6f;
   color:#fff;
   text-align:center;
-  padding:18px;
-  font-size:14px
+  padding:18px
 }
 </style>
 </head>
@@ -124,12 +151,12 @@ footer{
 <nav>
   <div class="logo" onclick="location.href='index.html'">Indreshwor Homestay</div>
   <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#rooms">Rooms</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#testimonial">Testimonials</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="rooms.html">Rooms</a></li>
+    <li><a href="experiences.html">Experience</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
 
@@ -138,36 +165,39 @@ footer{
 </div>
 
 <!-- ABOUT -->
-<section id="about">
+<section>
 <h2>About Us</h2>
 <div class="box">
 <p>
-Welcome to our family-run homestay nestled in the heart of Panauti. With four cozy rooms and a commitment to hospitality, we invite you to experience the warmth of our home as your own.
+Welcome to our family-run homestay nestled in the heart of Panauti. With four cozy rooms and heartfelt hospitality, we invite you to experience the warmth of our home.
 <br><br>
-Immerse yourself in the rich culture of Panauti with complimentary sightseeing tours, and savor the flavors of local cuisine with complimentary cooking classes.
-<br><br>
-Our homestay is a serene sanctuary away from city life. Whether you're seeking peace or cultural exploration, we promise a memorable stay filled with warmth and authenticity.
+Enjoy complimentary sightseeing tours, hands-on Nepali cooking classes, and a peaceful atmosphere away from city life.
 </p>
 </div>
 </section>
 
 <!-- ROOMS -->
-<section id="rooms">
+<section>
 <h2>Rooms</h2>
-<div class="slider" id="roomSlider">
-  <div class="slide active"><img src="images/room 1.jpg" onclick="openLightbox(this)"></div>
-  <div class="slide"><img src="images/room 3.jpg" onclick="openLightbox(this)"></div>
-  <button class="btn prev" onclick="slide('roomSlider',-1)">&#10094;</button>
-  <button class="btn next" onclick="slide('roomSlider',1)">&#10095;</button>
+<p style="text-align:center">
+We offer comfortable, spacious rooms ideal for families and travelers.
+</p>
+
+<div class="rooms-grid">
+  <img src="images/room 1.jpg">
+  <img src="images/room 3.jpg">
+  <img src="images/room 1.jpg">
 </div>
 </section>
 
 <!-- EXPERIENCE -->
-<section id="experience">
+<section>
 <h2>Experiences</h2>
 
-<h3>🍳 Cooking</h3>
-<p>At our homestay, we offer complimentary cooking classes where guests prepare authentic Nepali dishes together with our family.</p>
+<h3>🍳 Cooking Experience</h3>
+<p>
+Learn authentic Nepali cooking alongside our family using fresh local ingredients.
+</p>
 <div class="slider" id="cookSlider">
   <div class="slide active"><img src="images/cooking1.jpg" onclick="openLightbox(this)"></div>
   <div class="slide"><img src="images/cooking2.jpg" onclick="openLightbox(this)"></div>
@@ -175,8 +205,10 @@ Our homestay is a serene sanctuary away from city life. Whether you're seeking p
   <button class="btn next" onclick="slide('cookSlider',1)">&#10095;</button>
 </div>
 
-<h3 style="margin-top:40px">🛕 Sightseeing</h3>
-<p>Explore Namobuddha, Sorakhutte Pati, Indreshwor Temple, Triveni Ghat, and Gorakhnath Temple with our guided local tours.</p>
+<h3>🛕 Sightseeing</h3>
+<p>
+Explore Indreshwor Temple, Namobuddha, Triveni Ghat, and historic Panauti with local guidance.
+</p>
 <div class="slider" id="sightSlider">
   <div class="slide active"><img src="images/sight1.jpg" onclick="openLightbox(this)"></div>
   <div class="slide"><img src="images/sight2.jpg" onclick="openLightbox(this)"></div>
@@ -186,46 +218,47 @@ Our homestay is a serene sanctuary away from city life. Whether you're seeking p
 </section>
 
 <!-- GALLERY -->
-<section id="gallery">
+<section>
 <h2>Gallery</h2>
-<div class="slider" id="gallerySlider">
+<div class="slider" id="gallerySlider" style="height:300px;width:60%">
   <div class="slide active"><img src="images/gallery1.jpg" onclick="openLightbox(this)"></div>
   <div class="slide"><img src="images/gallery2.jpg" onclick="openLightbox(this)"></div>
   <div class="slide"><img src="images/gallery3.jpg" onclick="openLightbox(this)"></div>
-  <div class="slide"><img src="images/gallery4.jpg" onclick="openLightbox(this)"></div>
-  <div class="slide"><img src="images/gallery5.jpg" onclick="openLightbox(this)"></div>
-  <div class="slide"><img src="images/gallery6.jpg" onclick="openLightbox(this)"></div>
-  <div class="slide"><img src="images/gallery7.jpg" onclick="openLightbox(this)"></div>
-  <div class="slide"><img src="images/gallery8.jpg" onclick="openLightbox(this)"></div>
-  <div class="slide"><img src="images/gallery9.jpg" onclick="openLightbox(this)"></div>
-  <div class="slide"><img src="images/gallery10.jpg" onclick="openLightbox(this)"></div>
-  <div class="slide"><img src="images/gallery11.jpg" onclick="openLightbox(this)"></div>
   <button class="btn prev" onclick="slide('gallerySlider',-1)">&#10094;</button>
   <button class="btn next" onclick="slide('gallerySlider',1)">&#10095;</button>
 </div>
 </section>
 
 <!-- TESTIMONIAL -->
-<section id="testimonial">
+<section>
 <h2>Testimonials</h2>
-<div class="slider" id="testSlider">
-  <div class="slide active testimonial">“I stayed two beautiful nights here. The family treated me like their own.”<div class="author">— Nataly (Colombia)</div></div>
-  <div class="slide testimonial">“Amazing hospitality and beautiful historical town.”<div class="author">— Audrianna</div></div>
-  <div class="slide testimonial">“Home food, great talks, and real Nepal experience.”<div class="author">— Inigo</div></div>
+<div class="slider" id="testSlider" style="height:auto;background:none">
+  <div class="slide active testimonial">
+    “The family welcomed me like their own. Wonderful experience.”
+    <div class="author">— Nataly, Colombia</div>
+  </div>
+  <div class="slide testimonial">
+    “Peaceful, authentic, and unforgettable stay.”
+    <div class="author">— Audrianna</div>
+  </div>
   <button class="btn prev" onclick="slide('testSlider',-1)">&#10094;</button>
   <button class="btn next" onclick="slide('testSlider',1)">&#10095;</button>
 </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
+<section>
 <h2>Contact</h2>
 <div class="box">
 <p>
 📧 indreshworhomestay@gmail.com<br>
 📞 +977 9841356421<br>
-📍 Panauti-07, Near Sorakhutte Pati
+📍 Indreshwor Home Stay, Malpi Rd, Panauti 45209
 </p>
+</div>
+<br>
+<div class="map">
+<iframe src="https://www.google.com/maps?q=Indreshwor%20Home%20Stay%20Panauti&output=embed" width="100%" height="100%" style="border:0"></iframe>
 </div>
 </section>
 
@@ -246,9 +279,6 @@ function slide(id,dir){
   i=(i+dir+s.length)%s.length;
   s[i].classList.add("active");
 }
-setInterval(()=>slide("gallerySlider",1),5000);
-setInterval(()=>slide("testSlider",1),4500);
-
 function openLightbox(img){
   lightbox.style.display="flex";
   lightboxImg.src=img.src;
