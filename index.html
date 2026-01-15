@@ -3,71 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indreshwor Homestay | Panauti Nepal</title>
 
-<title>Indreshwor Homestay | Authentic Homestay in Panauti Nepal</title>
-
-<meta name="description" content="Indreshwor Homestay in Panauti offers cozy rooms, complimentary sightseeing tours, Nepali cooking classes, and warm family hospitality near Indreshwor Temple.">
-<meta name="keywords" content="Indreshwor Homestay, Panauti Homestay, Nepal Homestay, Indreshwor Temple Stay">
-<meta name="author" content="Indreshwor Homestay">
+<meta name="description" content="Family-run homestay in Panauti Nepal offering cozy rooms, Nepali cooking classes, sightseeing tours, and authentic hospitality.">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial}
-body{background:#f4f7fb;color:#333}
+body{background:#eef2f7;color:#333}
 
 /* NAVBAR */
 nav{
   position:sticky;top:0;z-index:100;
   display:flex;justify-content:space-between;align-items:center;
   padding:14px 40px;
-  background:rgba(255,255,255,.96);
-  box-shadow:0 10px 30px rgba(0,0,0,.08)
+  background:#fff;
+  box-shadow:0 8px 30px rgba(0,0,0,.1)
 }
-.logo{
-  font-size:22px;font-weight:700;color:#0b4a6f;
-  cursor:pointer
-}
+.logo{font-size:22px;font-weight:700;color:#0b4a6f;cursor:pointer}
 nav ul{display:flex;gap:22px;list-style:none}
-nav a{text-decoration:none;color:#333;font-weight:500}
+nav a{text-decoration:none;color:#333}
 nav a:hover{color:#0b4a6f}
 
 /* HERO */
 .hero{
-  height:70vh;
+  height:65vh;
   background:url("images/indreshwor-temple-1.jpg") center/cover no-repeat;
   display:flex;align-items:center;justify-content:center;
   position:relative
 }
-.hero::after{
-  content:"";position:absolute;inset:0;
-  background:rgba(0,0,0,.45)
-}
+.hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
 .hero h1{
-  position:relative;color:#fff;font-size:48px;
-  background:rgba(0,0,0,.45);
-  padding:20px 40px;border-radius:16px
+  position:relative;color:#fff;font-size:46px;
+  padding:18px 40px;border-radius:16px;
+  background:rgba(0,0,0,.55)
 }
 
 /* SECTION */
 section{padding:80px 10%}
-h2{text-align:center;margin-bottom:40px;font-size:34px;color:#0b4a6f}
-h3{margin:20px 0;color:#0b4a6f}
+h2{text-align:center;margin-bottom:40px;color:#0b4a6f;font-size:34px}
 p{line-height:1.8}
+
+/* BOX */
+.box{
+  background:#fff;
+  padding:40px;
+  border-radius:24px;
+  box-shadow:0 15px 40px rgba(0,0,0,.12)
+}
 
 /* SLIDER */
 .slider{
   position:relative;
   width:100%;
-  height:340px;
-  overflow:hidden;
-  border-radius:22px;
+  height:220px;
   background:#000;
-  box-shadow:0 20px 50px rgba(0,0,0,.15)
+  overflow:hidden;
+  border-radius:20px;
+  margin-top:20px
 }
 .slide{
-  position:absolute;
-  inset:0;
+  position:absolute;inset:0;
   opacity:0;
-  transition:opacity .8s ease
+  transition:opacity .7s ease
 }
 .slide.active{opacity:1}
 .slide img{
@@ -78,36 +75,27 @@ p{line-height:1.8}
   cursor:pointer
 }
 
-/* BUTTONS */
+/* BUTTON */
 .btn{
   position:absolute;top:50%;transform:translateY(-50%);
-  width:52px;height:52px;border-radius:50%;
+  width:46px;height:46px;border-radius:50%;
   border:none;cursor:pointer;
   background:rgba(255,255,255,.9);
-  font-size:22px;
-  box-shadow:0 8px 20px rgba(0,0,0,.35)
+  font-size:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,.4)
 }
-.btn:hover{background:#fff}
-.prev{left:18px}
-.next{right:18px}
+.prev{left:15px}
+.next{right:15px}
 
 /* TESTIMONIAL */
 .testimonial{
   text-align:center;
+  padding:30px;
   background:#fff;
-  padding:50px;
   border-radius:22px;
-  box-shadow:0 10px 30px rgba(0,0,0,.1)
+  box-shadow:0 12px 35px rgba(0,0,0,.15)
 }
-
-/* MAP */
-.map{
-  width:100%;
-  height:400px;
-  border-radius:20px;
-  overflow:hidden;
-  box-shadow:0 15px 40px rgba(0,0,0,.15)
-}
+.author{margin-top:14px;font-weight:600;color:#0b4a6f}
 
 /* LIGHTBOX */
 #lightbox{
@@ -115,13 +103,18 @@ p{line-height:1.8}
   position:fixed;inset:0;
   background:rgba(0,0,0,.9);
   z-index:999;
-  justify-content:center;
-  align-items:center
+  justify-content:center;align-items:center
 }
 #lightbox img{max-width:95%;max-height:95%}
-#closeLightbox{
-  position:absolute;top:20px;right:30px;
-  font-size:34px;color:#fff;cursor:pointer
+#closeLightbox{position:absolute;top:20px;right:30px;font-size:34px;color:#fff;cursor:pointer}
+
+/* FOOTER */
+footer{
+  background:#0b4a6f;
+  color:#fff;
+  text-align:center;
+  padding:18px;
+  font-size:14px
 }
 </style>
 </head>
@@ -131,11 +124,11 @@ p{line-height:1.8}
 <nav>
   <div class="logo" onclick="location.href='index.html'">Indreshwor Homestay</div>
   <ul>
-    <li><a href="index.html">Home</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#rooms">Rooms</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#testimonial">Testimonials</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -147,39 +140,34 @@ p{line-height:1.8}
 <!-- ABOUT -->
 <section id="about">
 <h2>About Us</h2>
+<div class="box">
 <p>
-Welcome to our family-run homestay nestled in the heart of Panauti. With four cozy rooms and a strong commitment to genuine hospitality, we invite you to experience the warmth of our home as your own.
+Welcome to our family-run homestay nestled in the heart of Panauti. With four cozy rooms and a commitment to hospitality, we invite you to experience the warmth of our home as your own.
 <br><br>
-Immerse yourself in the rich culture and heritage of Panauti through complimentary sightseeing tours and hands-on Nepali cooking classes that connect you deeply with local traditions.
+Immerse yourself in the rich culture of Panauti with complimentary sightseeing tours, and savor the flavors of local cuisine with complimentary cooking classes.
 <br><br>
-Our homestay is a serene sanctuary away from the hustle and bustle of city life. Whether you’re seeking a peaceful getaway or eager to explore hidden cultural gems, we promise a memorable stay filled with warmth, comfort, and authentic Nepali experiences.
+Our homestay is a serene sanctuary away from city life. Whether you're seeking peace or cultural exploration, we promise a memorable stay filled with warmth and authenticity.
 </p>
+</div>
 </section>
 
 <!-- ROOMS -->
 <section id="rooms">
-<h2>Our Rooms</h2>
-<p>
-Our homestay features comfortable, clean, and peaceful rooms designed to make you feel at home:
-</p>
-<ul>
-  <li>🛏️ 2 Rooms with **2 Double Beds**</li>
-  <li>🛏️ 1 Room with **1 Single Bed + 2 Double Beds**</li>
-</ul>
-<p>
-All rooms offer a calm atmosphere, comfortable bedding, and a relaxing environment ideal for families, couples, and solo travelers.
-</p>
+<h2>Rooms</h2>
+<div class="slider" id="roomSlider">
+  <div class="slide active"><img src="images/room 1.jpg" onclick="openLightbox(this)"></div>
+  <div class="slide"><img src="images/room 3.jpg" onclick="openLightbox(this)"></div>
+  <button class="btn prev" onclick="slide('roomSlider',-1)">&#10094;</button>
+  <button class="btn next" onclick="slide('roomSlider',1)">&#10095;</button>
+</div>
 </section>
 
 <!-- EXPERIENCE -->
 <section id="experience">
 <h2>Experiences</h2>
 
-<h3>🍳 Cooking Experience</h3>
-<p>
-At our homestay, we offer more than accommodation. Guests enjoy complimentary cooking classes where they actively participate in preparing authentic Nepali dishes alongside our family. From selecting fresh ingredients to learning traditional techniques, this hands-on experience deepens cultural understanding and creates unforgettable memories.
-</p>
-
+<h3>🍳 Cooking</h3>
+<p>At our homestay, we offer complimentary cooking classes where guests prepare authentic Nepali dishes together with our family.</p>
 <div class="slider" id="cookSlider">
   <div class="slide active"><img src="images/cooking1.jpg" onclick="openLightbox(this)"></div>
   <div class="slide"><img src="images/cooking2.jpg" onclick="openLightbox(this)"></div>
@@ -187,13 +175,8 @@ At our homestay, we offer more than accommodation. Guests enjoy complimentary co
   <button class="btn next" onclick="slide('cookSlider',1)">&#10095;</button>
 </div>
 
-<br><br>
-
-<h3>🛕 Sightseeing</h3>
-<p>
-Explore the rich heritage and spiritual sanctuaries of Panauti with our complimentary sightseeing tours. Visit Namobuddha, Sorakhutte Pati, the ancient Indreshwor Temple, Triveni Ghat, Gorakhnath Temple, and other cultural landmarks that reveal the spiritual heart of Nepal.
-</p>
-
+<h3 style="margin-top:40px">🛕 Sightseeing</h3>
+<p>Explore Namobuddha, Sorakhutte Pati, Indreshwor Temple, Triveni Ghat, and Gorakhnath Temple with our guided local tours.</p>
 <div class="slider" id="sightSlider">
   <div class="slide active"><img src="images/sight1.jpg" onclick="openLightbox(this)"></div>
   <div class="slide"><img src="images/sight2.jpg" onclick="openLightbox(this)"></div>
@@ -209,39 +192,46 @@ Explore the rich heritage and spiritual sanctuaries of Panauti with our complime
   <div class="slide active"><img src="images/gallery1.jpg" onclick="openLightbox(this)"></div>
   <div class="slide"><img src="images/gallery2.jpg" onclick="openLightbox(this)"></div>
   <div class="slide"><img src="images/gallery3.jpg" onclick="openLightbox(this)"></div>
+  <div class="slide"><img src="images/gallery4.jpg" onclick="openLightbox(this)"></div>
+  <div class="slide"><img src="images/gallery5.jpg" onclick="openLightbox(this)"></div>
+  <div class="slide"><img src="images/gallery6.jpg" onclick="openLightbox(this)"></div>
+  <div class="slide"><img src="images/gallery7.jpg" onclick="openLightbox(this)"></div>
+  <div class="slide"><img src="images/gallery8.jpg" onclick="openLightbox(this)"></div>
+  <div class="slide"><img src="images/gallery9.jpg" onclick="openLightbox(this)"></div>
+  <div class="slide"><img src="images/gallery10.jpg" onclick="openLightbox(this)"></div>
+  <div class="slide"><img src="images/gallery11.jpg" onclick="openLightbox(this)"></div>
   <button class="btn prev" onclick="slide('gallerySlider',-1)">&#10094;</button>
   <button class="btn next" onclick="slide('gallerySlider',1)">&#10095;</button>
 </div>
 </section>
 
 <!-- TESTIMONIAL -->
-<section>
+<section id="testimonial">
 <h2>Testimonials</h2>
 <div class="slider" id="testSlider">
-  <div class="slide active testimonial">“The family welcomed me like their own. Amazing culture and food.”</div>
-  <div class="slide testimonial">“Peaceful, authentic, and unforgettable stay in Panauti.”</div>
-  <div class="slide testimonial">“Best homestay experience in Nepal. Highly recommended!”</div>
+  <div class="slide active testimonial">“I stayed two beautiful nights here. The family treated me like their own.”<div class="author">— Nataly (Colombia)</div></div>
+  <div class="slide testimonial">“Amazing hospitality and beautiful historical town.”<div class="author">— Audrianna</div></div>
+  <div class="slide testimonial">“Home food, great talks, and real Nepal experience.”<div class="author">— Inigo</div></div>
+  <button class="btn prev" onclick="slide('testSlider',-1)">&#10094;</button>
+  <button class="btn next" onclick="slide('testSlider',1)">&#10095;</button>
 </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-<h2>Contact Us</h2>
+<h2>Contact</h2>
+<div class="box">
 <p>
-📧 Email: indreshworhomestay@gmail.com  
-<br>
-📞 Phone: +977 9841356421  
-<br>
-📍 Address: Panauti-07, Near Sorakhutte Pati / Ward 07 Office
+📧 indreshworhomestay@gmail.com<br>
+📞 +977 9841356421<br>
+📍 Panauti-07, Near Sorakhutte Pati
 </p>
-
-<div class="map">
-<iframe
-  src="https://www.google.com/maps?q=Indreshwor%20Home%20Stay%20Malpi%20Rd%20Panauti&output=embed"
-  width="100%" height="100%" style="border:0" allowfullscreen loading="lazy">
-</iframe>
 </div>
 </section>
+
+<footer>
+© 2026 Indreshwor Homestay. All Rights Reserved.
+</footer>
 
 <div id="lightbox">
   <span id="closeLightbox" onclick="closeLightbox()">×</span>
@@ -250,14 +240,14 @@ Explore the rich heritage and spiritual sanctuaries of Panauti with our complime
 
 <script>
 function slide(id,dir){
-  const slides=document.querySelectorAll(`#${id} .slide`);
-  let i=[...slides].findIndex(s=>s.classList.contains("active"));
-  slides[i].classList.remove("active");
-  i=(i+dir+slides.length)%slides.length;
-  slides[i].classList.add("active");
+  const s=document.querySelectorAll(`#${id} .slide`);
+  let i=[...s].findIndex(x=>x.classList.contains("active"));
+  s[i].classList.remove("active");
+  i=(i+dir+s.length)%s.length;
+  s[i].classList.add("active");
 }
 setInterval(()=>slide("gallerySlider",1),5000);
-setInterval(()=>slide("testSlider",1),4000);
+setInterval(()=>slide("testSlider",1),4500);
 
 function openLightbox(img){
   lightbox.style.display="flex";
