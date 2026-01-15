@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
-/* Horizontal navbar like homepage */
+/* Navbar */
 nav {
   width: 100%;
   background: #0b4a6f;
@@ -45,7 +45,7 @@ nav ul li a:hover {
 
 /* Gallery Section */
 .gallery-section {
-  padding: 100px 20px 60px; /* leave space for fixed navbar */
+  padding: 100px 20px 60px; /* space for navbar */
   max-width: 1200px;
   margin: auto;
 }
@@ -57,32 +57,22 @@ nav ul li a:hover {
   color: #0b4a6f;
 }
 
-/* Horizontal Scrollable Gallery */
+/* Gallery Slider */
 .gallery-slider {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 20px;
-  padding-bottom: 10px;
-}
-
-.gallery-slider::-webkit-scrollbar {
-  height: 10px;
-}
-
-.gallery-slider::-webkit-scrollbar-thumb {
-  background: #0b4a6f;
-  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .gallery-slide {
-  flex: 0 0 auto;
-  width: 400px; /* width of each image */
+  display: none;
+  text-align: center;
 }
 
 .gallery-slide img {
-  width: 100%;
-  height: 300px;
+  width: auto;
+  max-width: 100%;
+  height: 400px; /* same height for all images */
   object-fit: contain; /* maintain aspect ratio */
   border-radius: 12px;
   cursor: pointer;
@@ -91,6 +81,28 @@ nav ul li a:hover {
 
 .gallery-slide img:hover {
   transform: scale(1.05);
+}
+
+/* Next/Prev Buttons */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  background: rgba(11, 74, 111, 0.7);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  z-index: 10;
+}
+
+.prev { left: 0; }
+.next { right: 0; }
+
+.prev:hover, .next:hover {
+  background: rgba(11, 74, 111, 1);
 }
 
 /* Lightbox */
@@ -144,6 +156,8 @@ nav ul li a:hover {
     <div class="gallery-slide"><img src="images/room 1.jpg" alt="Room 1"></div>
     <div class="gallery-slide"><img src="images/room2.jpg" alt="Room 2"></div>
     <div class="gallery-slide"><img src="images/room 3.jpg" alt="Room 3"></div>
+    <button class="prev" onclick="plusSlides(-1, 'roomsSlider')">&#10094;</button>
+    <button class="next" onclick="plusSlides(1, 'roomsSlider')">&#10095;</button>
   </div>
 </section>
 
@@ -154,6 +168,10 @@ nav ul li a:hover {
     <div class="gallery-slide"><img src="images/sight1.jpg" alt="Sightseeing 1"></div>
     <div class="gallery-slide"><img src="images/sight2.jpg" alt="Sightseeing 2"></div>
     <div class="gallery-slide"><img src="images/sight3.jpg" alt="Sightseeing 3"></div>
+    <div class="gallery-slide"><img src="images/sight4.jpg" alt="Sightseeing 4"></div>
+    <div class="gallery-slide"><img src="images/sight5.jpg" alt="Sightseeing 5"></div>
+    <button class="prev" onclick="plusSlides(-1, 'sightseeingSlider')">&#10094;</button>
+    <button class="next" onclick="plusSlides(1, 'sightseeingSlider')">&#10095;</button>
   </div>
 </section>
 
@@ -161,33 +179,35 @@ nav ul li a:hover {
 <section class="gallery-section" id="guest">
   <h2>Guest Photos</h2>
   <div class="gallery-slider" id="guestSlider">
-    <!-- guest1.jpg → guest26.jpg -->
-    <div class="gallery-slide"><img src="images/guest1.jpg" alt="Guest 1"></div>
-    <div class="gallery-slide"><img src="images/guest2.jpg" alt="Guest 2"></div>
-    <div class="gallery-slide"><img src="images/guest3.jpg" alt="Guest 3"></div>
-    <div class="gallery-slide"><img src="images/guest4.jpg" alt="Guest 4"></div>
-    <div class="gallery-slide"><img src="images/guest5.jpg" alt="Guest 5"></div>
-    <div class="gallery-slide"><img src="images/guest6.jpg" alt="Guest 6"></div>
-    <div class="gallery-slide"><img src="images/guest7.jpg" alt="Guest 7"></div>
-    <div class="gallery-slide"><img src="images/guest8.jpg" alt="Guest 8"></div>
-    <div class="gallery-slide"><img src="images/guest9.jpg" alt="Guest 9"></div>
-    <div class="gallery-slide"><img src="images/guest10.jpg" alt="Guest 10"></div>
-    <div class="gallery-slide"><img src="images/guest11.jpg" alt="Guest 11"></div>
-    <div class="gallery-slide"><img src="images/guest12.jpg" alt="Guest 12"></div>
-    <div class="gallery-slide"><img src="images/guest13.jpg" alt="Guest 13"></div>
-    <div class="gallery-slide"><img src="images/guest14.jpg" alt="Guest 14"></div>
-    <div class="gallery-slide"><img src="images/guest15.jpg" alt="Guest 15"></div>
-    <div class="gallery-slide"><img src="images/guest16.jpg" alt="Guest 16"></div>
-    <div class="gallery-slide"><img src="images/guest17.jpg" alt="Guest 17"></div>
-    <div class="gallery-slide"><img src="images/guest18.jpg" alt="Guest 18"></div>
-    <div class="gallery-slide"><img src="images/guest19.jpg" alt="Guest 19"></div>
-    <div class="gallery-slide"><img src="images/guest20.jpg" alt="Guest 20"></div>
-    <div class="gallery-slide"><img src="images/guest21.jpg" alt="Guest 21"></div>
-    <div class="gallery-slide"><img src="images/guest22.jpg" alt="Guest 22"></div>
-    <div class="gallery-slide"><img src="images/guest23.jpg" alt="Guest 23"></div>
-    <div class="gallery-slide"><img src="images/guest24.jpg" alt="Guest 24"></div>
-    <div class="gallery-slide"><img src="images/guest25.jpg" alt="Guest 25"></div>
-    <div class="gallery-slide"><img src="images/guest26.jpg" alt="Guest 26"></div>
+    <!-- gallery1.jpg → gallery26.jpg -->
+    <div class="gallery-slide"><img src="images/gallery1.jpg" alt="Guest 1"></div>
+    <div class="gallery-slide"><img src="images/gallery2.jpg" alt="Guest 2"></div>
+    <div class="gallery-slide"><img src="images/gallery3.jpg" alt="Guest 3"></div>
+    <div class="gallery-slide"><img src="images/gallery4.jpg" alt="Guest 4"></div>
+    <div class="gallery-slide"><img src="images/gallery5.jpg" alt="Guest 5"></div>
+    <div class="gallery-slide"><img src="images/gallery6.jpg" alt="Guest 6"></div>
+    <div class="gallery-slide"><img src="images/gallery7.jpg" alt="Guest 7"></div>
+    <div class="gallery-slide"><img src="images/gallery8.jpg" alt="Guest 8"></div>
+    <div class="gallery-slide"><img src="images/gallery9.jpg" alt="Guest 9"></div>
+    <div class="gallery-slide"><img src="images/gallery10.jpg" alt="Guest 10"></div>
+    <div class="gallery-slide"><img src="images/gallery11.jpg" alt="Guest 11"></div>
+    <div class="gallery-slide"><img src="images/gallery12.jpg" alt="Guest 12"></div>
+    <div class="gallery-slide"><img src="images/gallery13.jpg" alt="Guest 13"></div>
+    <div class="gallery-slide"><img src="images/gallery14.jpg" alt="Guest 14"></div>
+    <div class="gallery-slide"><img src="images/gallery15.jpg" alt="Guest 15"></div>
+    <div class="gallery-slide"><img src="images/gallery16.jpg" alt="Guest 16"></div>
+    <div class="gallery-slide"><img src="images/gallery17.jpg" alt="Guest 17"></div>
+    <div class="gallery-slide"><img src="images/gallery18.jpg" alt="Guest 18"></div>
+    <div class="gallery-slide"><img src="images/gallery19.jpg" alt="Guest 19"></div>
+    <div class="gallery-slide"><img src="images/gallery20.jpg" alt="Guest 20"></div>
+    <div class="gallery-slide"><img src="images/gallery21.jpg" alt="Guest 21"></div>
+    <div class="gallery-slide"><img src="images/gallery22.jpg" alt="Guest 22"></div>
+    <div class="gallery-slide"><img src="images/gallery23.jpg" alt="Guest 23"></div>
+    <div class="gallery-slide"><img src="images/gallery24.jpg" alt="Guest 24"></div>
+    <div class="gallery-slide"><img src="images/gallery25.jpg" alt="Guest 25"></div>
+    <div class="gallery-slide"><img src="images/gallery26.jpg" alt="Guest 26"></div>
+    <button class="prev" onclick="plusSlides(-1, 'guestSlider')">&#10094;</button>
+    <button class="next" onclick="plusSlides(1, 'guestSlider')">&#10095;</button>
   </div>
 </section>
 
@@ -198,6 +218,24 @@ nav ul li a:hover {
 </div>
 
 <script>
+// Slide Function
+const sliders = {};
+
+function plusSlides(n, sliderId) {
+  const slides = document.querySelectorAll(`#${sliderId} .gallery-slide`);
+  if (!sliders[sliderId]) sliders[sliderId] = 0;
+  sliders[sliderId] = (sliders[sliderId] + n + slides.length) % slides.length;
+  slides.forEach(s => s.style.display = 'none');
+  slides[sliders[sliderId]].style.display = 'block';
+}
+
+// Initialize sliders
+['roomsSlider','sightseeingSlider','guestSlider'].forEach(id => {
+  const slides = document.querySelectorAll(`#${id} .gallery-slide`);
+  slides.forEach(s => s.style.display = 'none');
+  if(slides[0]) slides[0].style.display = 'block';
+});
+
 // Lightbox functionality
 document.querySelectorAll('.gallery-slide img').forEach(img => {
   img.addEventListener('click', function(e){
