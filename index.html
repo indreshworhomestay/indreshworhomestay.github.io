@@ -397,6 +397,29 @@ window.addEventListener("scroll", function() {
   heroImg.style.transform = `translateY(${scrollPos * 0.2}px)`; // vertical movement only
 });
 </script>
+<script>
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = lightbox.querySelector("img");
+const closeBtn = document.getElementById("closeLightbox");
+
+document.querySelectorAll("img").forEach(img => {
+  img.addEventListener("click", function () {
+    lightbox.style.display = "flex";
+    lightboxImg.src = this.src;
+  });
+});
+
+closeBtn.onclick = () => {
+  lightbox.style.display = "none";
+};
+
+lightbox.onclick = (e) => {
+  if (e.target === lightbox) {
+    lightbox.style.display = "none";
+  }
+};
+</script>
+</body>
 
 </body>
 </html>
