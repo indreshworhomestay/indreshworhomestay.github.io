@@ -393,26 +393,23 @@ window.addEventListener("scroll", function() {
 });
 </script>
 <script>
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = lightbox.querySelector("img");
-const closeBtn = document.getElementById("closeLightbox");
+document.addEventListener("click", function (e) {
+  const img = e.target;
 
-document.querySelectorAll("img").forEach(img => {
-  img.addEventListener("click", function () {
+  if (img.tagName === "IMG" && img.closest(".gallery-slide, .experience-slide, .room-img")) {
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+
+    lightboxImg.src = img.src;
     lightbox.style.display = "flex";
-    lightboxImg.src = this.src;
-  });
-});
-
-closeBtn.onclick = () => {
-  lightbox.style.display = "none";
-};
-
-lightbox.onclick = (e) => {
-  if (e.target === lightbox) {
-    lightbox.style.display = "none";
   }
-};
+
+  if (e.target.id === "closeLightbox" || e.target.id === "lightbox") {
+    document.getElementById("lightbox").style.display = "none";
+  }
+});
+</script>
+
 </script>
   <!-- page content -->
 
