@@ -386,6 +386,14 @@ window.addEventListener("scroll", function() {
   heroImg.style.transform = `translate(-50%, ${scrollPos * 0.2}px)`; 
 });
 </script>
+<script>
+// Parallax effect for hero image (vertical only)
+window.addEventListener("scroll", function() {
+  const heroImg = document.querySelector(".hero img");
+  const scrollPos = window.scrollY;
+  heroImg.style.transform = `translateY(${scrollPos * 0.2}px)`; // vertical movement only
+});
+</script>
 
 </body>
 </html>
