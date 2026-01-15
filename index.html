@@ -24,44 +24,46 @@ nav a:hover{color:#0b4a6f}
 
 /* HERO */
 .hero {
-  height: 70vh;
-  overflow: hidden;
   position: relative;
+  height: 100vh;  /* full viewport height */
+  width: 100%;    /* full width */
+  overflow: hidden;
 }
 
 .hero img {
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 110%;   /* slightly bigger than container */
-  height: 75%%;  
-  min-height: 120%;
-  object-fit: cover;
-  transition: transform 0.5s ease-out;
+  left: 0;
+  width: 100%;    /* fill entire width */
+  height: 100%;   /* fill entire height */
+  object-fit: cover; /* scale image without distortion */
   z-index: 1;
 }
 
 .hero::after {
-  content:"";
-  position:absolute;
-  inset:0;
-  background: rgba(0,0,0,0.2); /* makes text pop */
-  z-index: 1;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25); /* subtle dark overlay for text */
+  z-index: 2;
 }
 
 .hero h1 {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: #fff;
-  font-size: 50px;
+  font-size: 60px;
   font-weight: 700;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
-  padding: 20px 50px;
-  border-radius: 16px;
-  background: rgba(0,0,0,0.3);
-  z-index: 2;
   text-align: center;
+  padding: 20px 40px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.35); /* subtle background for text */
+  z-index: 3;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
 }
+
 
 /* SECTION */
 section{padding:80px 10%}
